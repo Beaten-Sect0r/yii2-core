@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #000000;
+    color: #63b8fb;
+}
+
+.wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: "Open Sans";
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 200px;
+    font-weight: normal;
+}

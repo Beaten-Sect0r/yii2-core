@@ -1,0 +1,30 @@
+# Set the default charset.
+AddDefaultCharset UTF-8
+
+# Don't show directory listings for URLs which map to a directory.
+Options -Indexes
+
+# Follow symbolic links in this directory.
+Options +FollowSymLinks
+
+IndexIgnore */*
+
+RewriteEngine On
+
+# Various rewrite rules.
+
+# Set "protossl" to "s" if we were accessed via https://. This is used later
+# if you enable "www." stripping or enforcement, in order to ensure that
+# you don't bounce between http and https.
+RewriteRule ^ - [E=protossl]
+RewriteCond %{HTTPS} on
+RewriteRule ^ - [E=protossl:s]
+
+# To redirect all users to access the site WITHOUT the 'www.' prefix,
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule . index.php

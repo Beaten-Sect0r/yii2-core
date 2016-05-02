@@ -1,0 +1,12 @@
+body .table {
+    word-break: break-all;
+}
+
+label {
+    display: block;   
+}
+
+div.required label:after {
+    content: " *";
+    color: #ff0000;
+}
