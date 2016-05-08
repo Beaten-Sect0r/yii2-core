@@ -6,6 +6,7 @@
 - [Manual installation](#manual-installation)
     - [Requirements](#requirements)
     - [Setup application](#setup-application)
+    - [Authentication](#authentication)
     - [Configure your web server](#configure-your-web-server)
     - [Single domain installtion](#single-domain-installation)
 
@@ -88,6 +89,15 @@ Required PHP extensions:
 
 ```
 php yii app/setup
+```
+
+### Authentication
+
+`administrator` role account
+
+```
+Login: Administrator
+Password: passwd
 ```
 
 ### Configure your web server
