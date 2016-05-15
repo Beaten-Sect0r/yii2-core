@@ -1,11 +1,11 @@
-/* Team */
+# Team
 Name: Alexander Volkov
 Contact: beatensect0r [at] gmail.com
 Location: Russian/Yaroslavl
 
-/* Thanks */
+# Thanks
 
-/* Site */
+# Site
 
                ,'``.._   ,'``.
               :,--._:)\,:,._,.:
