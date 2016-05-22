@@ -114,9 +114,9 @@ Or configure your web server with three different web roots:
 Adjust settings in `.env` file
 
 ```
-FRONTEND_URL = /
-BACKEND_URL = /backend
-STORAGE_URL = /storage
+FRONTEND_URL = http://yii2-core
+BACKEND_URL = http://yii2-core/backend
+STORAGE_URL = http://yii2-core/storage
 ```
 
 Adjust settings in `backend/config/main.php` file
@@ -126,7 +126,7 @@ Adjust settings in `backend/config/main.php` file
     'components'=>[
         ...
         'request' => [
-            'baseUrl' => '/admin',
+            'baseUrl' => '/backend',
         ...
 ```
 
