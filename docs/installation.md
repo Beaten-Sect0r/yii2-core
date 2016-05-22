@@ -115,7 +115,7 @@ Adjust settings in `.env` file
 
 ```
 FRONTEND_URL = /
-BACKEND_URL = /admin
+BACKEND_URL = /backend
 STORAGE_URL = /storage
 ```
 
