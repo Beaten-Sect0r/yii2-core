@@ -9,6 +9,7 @@
     - [Authentication](#authentication)
     - [Configure your web server](#configure-your-web-server)
     - [Single domain installtion](#single-domain-installation)
+    - [Video instruction](#video-instruction)
 
 ## Before you begin
 
@@ -172,3 +173,7 @@ RewriteRule ^storage/(.*)$ storage/$1 [L]
 RewriteCond %{REQUEST_URI} ^(.*)$
 RewriteRule ^(.*)$ frontend/web/$1
 ```
+
+### Video instruction
+
+[https://www.youtube.com/watch?v=a8uCGQ25hhg](https://www.youtube.com/watch?v=a8uCGQ25hhg)
