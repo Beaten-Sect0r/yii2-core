@@ -45,7 +45,7 @@ composer install --prefer-dist
 You can install this application template with `composer` using the following command:
 
 ```
-composer create-project --prefer-dist --stability=dev Beaten-Sect0r/yii2-core
+composer create-project --prefer-dist --stability=dev beaten-sect0r/yii2-core
 ```
 
 ## Manual installation
