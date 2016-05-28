@@ -13,6 +13,9 @@ use frontend\modules\account\models\MessageForm;
 use frontend\modules\account\models\PasswordForm;
 use frontend\modules\account\models\search\UserSearch;
 
+/**
+ * Default controller.
+ */
 class DefaultController extends Controller
 {
     /**

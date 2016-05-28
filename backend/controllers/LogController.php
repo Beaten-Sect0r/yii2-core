@@ -38,6 +38,10 @@ class LogController extends Controller
 
         if (strcasecmp(Yii::$app->request->method, 'delete') == 0) {
             Log::deleteAll($dataProvider->query->where);
+            Yii::$app->session->setFlash('alert', [
+                'body' => Yii::t('backend', 'Log has been successfully cleared.'),
+                'options' => ['class' => 'alert-success'],
+            ]);
 
             return $this->refresh();
         }
