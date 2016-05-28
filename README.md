@@ -22,7 +22,7 @@ It covers typical use cases for a new project and will help you not to waste you
 - Useful behaviors (GlobalAccessBehavior, LastActionBehavior)
 - Yii2 log web interface
 - Cache web controller
-- [Sypex Dumper](https://sypex.net) integration component
+- [Yii2 DB manager](https://github.com/Beaten-Sect0r/yii2-db-manager)
 - Maintenance mode component
 - [Key storage component](https://github.com/trntv/yii2-starter-kit/tree/master/common/components/keyStorage)
 - [dotenv support](https://github.com/vlucas/phpdotenv)
