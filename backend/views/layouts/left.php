@@ -69,7 +69,7 @@ use backend\widgets\Menu;
                         ['label' => Yii::t('backend', 'File manager'), 'url' => ['/file-manager/index'], 'icon' => '<i class="fa fa-angle-double-right"></i>'],
                         [
                             'label' => Yii::t('backend', 'DB manager'),
-                            'url' => ['/db-manager/index'],
+                            'url' => ['/db-manager/default/index'],
                             'icon' => '<i class="fa fa-angle-double-right"></i>',
                             'visible' => Yii::$app->user->can('administrator'),
                         ],

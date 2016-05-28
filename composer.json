@@ -18,6 +18,7 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "vlucas/phpdotenv": "*",
+        "beaten-sect0r/yii2-db-manager": "*",
         "samdark/sitemap": "*",
         "vova07/yii2-imperavi-widget": "*",
         "vova07/yii2-fileapi-widget": "*",

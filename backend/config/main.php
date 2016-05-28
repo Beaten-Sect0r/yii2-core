@@ -53,6 +53,23 @@ $config = [
         ],
     ],
     'modules' => [
+        'db-manager' => [
+            'class' => 'bs\dbManager\Module',
+            'dsn' => $config['components']['db']['dsn'],
+            'username' => $config['components']['db']['username'],
+            'password' => $config['components']['db']['password'],
+            'tablePrefix' => $config['components']['db']['tablePrefix'],
+            'path' => Yii::getAlias('@root') . '/backup/',
+            'as access' => [
+                'class' => 'common\behaviors\GlobalAccessBehavior',
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['administrator'],
+                    ],
+                ],
+            ],
+        ],
         'webshell' => [
             'class' => 'samdark\webshell\Module',
             'yiiScript' => Yii::getAlias('@root') . '/yii', // adjust path to point to your ./yii script
@@ -96,15 +113,6 @@ $config = [
             ],
             [
                 'controllers' => ['user'],
-                'allow' => false,
-            ],
-            [
-                'controllers' => ['db-manager'],
-                'allow' => true,
-                'roles' => ['administrator'],
-            ],
-            [
-                'controllers' => ['db-manager'],
                 'allow' => false,
             ],
             [
