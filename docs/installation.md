@@ -176,4 +176,4 @@ RewriteRule ^(.*)$ frontend/web/$1
 
 ### Video instruction
 
-[https://www.youtube.com/watch?v=a8uCGQ25hhg](https://www.youtube.com/watch?v=a8uCGQ25hhg)
+[https://www.youtube.com/watch?v=XAC5joagA70](https://www.youtube.com/watch?v=XAC5joagA70)
