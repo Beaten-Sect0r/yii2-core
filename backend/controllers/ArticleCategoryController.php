@@ -77,7 +77,7 @@ class ArticleCategoryController extends Controller
     {
         $model = $this->findModel($id);
 
-        $categories = ArticleCategory::find()->noParents()->andWhere(['not in', 'id', $id])->active()->all();
+        $categories = ArticleCategory::find()->noParents()->andWhere(['not', ['id' => $id]])->active()->all();
         $categories = ArrayHelper::map($categories, 'id', 'title');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
