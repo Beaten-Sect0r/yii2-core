@@ -59,7 +59,7 @@ $config = [
             'username' => $config['components']['db']['username'],
             'password' => $config['components']['db']['password'],
             'tablePrefix' => $config['components']['db']['tablePrefix'],
-            'path' => Yii::getAlias('@root') . '/backup/',
+            'path' => Yii::getAlias('@root/backup/'),
             'as access' => [
                 'class' => 'common\behaviors\GlobalAccessBehavior',
                 'rules' => [
@@ -72,7 +72,7 @@ $config = [
         ],
         'webshell' => [
             'class' => 'samdark\webshell\Module',
-            'yiiScript' => Yii::getAlias('@root') . '/yii', // adjust path to point to your ./yii script
+            'yiiScript' => Yii::getAlias('@root/yii'), // adjust path to point to your ./yii script
             'allowedIPs' => ['*'],
             'as access' => [
                 'class' => 'common\behaviors\GlobalAccessBehavior',

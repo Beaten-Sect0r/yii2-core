@@ -43,7 +43,7 @@ class UserProfile extends ActiveRecord
                     'avatar_path' => [
                         'path' => '@storage/avatars',
                         'tempPath' => '@storage/tmp',
-                        'url' => Yii::getAlias('@storageUrl') . '/avatars',
+                        'url' => Yii::getAlias('@storageUrl/avatars'),
                     ],
                 ],
             ],

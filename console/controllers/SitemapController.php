@@ -18,7 +18,7 @@ class SitemapController extends Controller
             $webUrl .= '/';
         }
 
-        $webPath = Yii::getAlias('@frontend') . '/web/';
+        $webPath = Yii::getAlias('@frontend/web/');
 
         // create sitemap
         $sitemap = new Sitemap($webPath . 'sitemap.xml');

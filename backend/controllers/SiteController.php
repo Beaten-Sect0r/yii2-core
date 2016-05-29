@@ -46,24 +46,24 @@ class SiteController extends Controller
             ],
             'images-get' => [
                 'class' => GetAction::className(),
-                'url' => Yii::getAlias('@storageUrl') . '/images/',
+                'url' => Yii::getAlias('@storageUrl/images'),
                 'path' => '@storage/images',
                 'type' => GetAction::TYPE_IMAGES,
             ],
             'files-get' => [
                 'class' => GetAction::className(),
-                'url' => Yii::getAlias('@storageUrl') . '/files/',
+                'url' => Yii::getAlias('@storageUrl/files'),
                 'path' => '@storage/files',
                 'type' => GetAction::TYPE_FILES,
             ],
             'image-upload' => [
                 'class' => UploadAction::className(),
-                'url' => Yii::getAlias('@storageUrl') . '/images/' . date('m.y') . '/',
+                'url' => Yii::getAlias('@storageUrl/images/' . date('m.y')),
                 'path' => '@storage/images/' . date('m.y'),
             ],
             'file-upload' => [
                 'class' => UploadAction::className(),
-                'url' => Yii::getAlias('@storageUrl') . '/files/' . date('m.y').'/',
+                'url' => Yii::getAlias('@storageUrl/files/' . date('m.y')),
                 'path' => '@storage/files/' . date('m.y'),
                 'uploadOnlyImage' => false,
             ],
