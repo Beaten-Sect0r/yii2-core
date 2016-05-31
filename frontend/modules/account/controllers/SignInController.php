@@ -103,15 +103,9 @@ class SignInController extends Controller
                     if (Yii::$app->keyStorage->get('frontend.email-confirm')) {
                         // подтверждение email
                         if ($model->sendEmail()) {
-                            Yii::$app->session->setFlash('alert', [
-                                'body' => Yii::t('frontend', 'Your account has been successfully created. Check your email for further instructions.'),
-                                'options' => ['class' => 'alert-success'],
-                            ]);
+                            Yii::$app->session->setFlash('success', Yii::t('frontend', 'Your account has been successfully created. Check your email for further instructions.'));
                         } else {
-                            Yii::$app->session->setFlash('alert', [
-                                'body' => Yii::t('frontend', 'There was an error sending email.'),
-                                'options' => ['class' => 'alert-danger'],
-                            ]);
+                            Yii::$app->session->setFlash('error', Yii::t('frontend', 'There was an error sending email.'));
                         }
 
                         return $this->refresh();
@@ -128,10 +122,7 @@ class SignInController extends Controller
                 'model' => $model,
             ]);
         } else {
-            Yii::$app->session->setFlash('alert', [
-                'body' => Yii::t('frontend', 'Registration is disabled.'),
-                'options' => ['class' => 'alert-info'],
-            ]);
+            Yii::$app->session->setFlash('info', Yii::t('frontend', 'Registration is disabled.'));
         }
     }
 
@@ -150,15 +141,9 @@ class SignInController extends Controller
             $user->status = User::STATUS_ACTIVE;
             $user->removeAccessToken();
             $user->save();
-            Yii::$app->session->setFlash('alert', [
-                'body' => Yii::t('frontend', 'Your account has been successfully activated.'),
-                'options' => ['class' => 'alert-success'],
-            ]);
+            Yii::$app->session->setFlash('success', Yii::t('frontend', 'Your account has been successfully activated.'));
         } else {
-            Yii::$app->session->setFlash('alert', [
-                'body' => Yii::t('frontend', 'Error activate your account.'),
-                'options' => ['class' => 'alert-danger'],
-            ]);
+            Yii::$app->session->setFlash('error', Yii::t('frontend', 'Error activate your account.'));
         }
 
         return $this->goHome();
@@ -174,15 +159,9 @@ class SignInController extends Controller
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
-                Yii::$app->session->setFlash('alert', [
-                    'body' => Yii::t('frontend', 'Check your email for further instructions.'),
-                    'options' => ['class' => 'alert-success'],
-                ]);
+                Yii::$app->session->setFlash('success', Yii::t('frontend', 'Check your email for further instructions.'));
             } else {
-                Yii::$app->session->setFlash('alert', [
-                    'body' => Yii::t('frontend', 'Sorry, we are unable to reset password for email provided.'),
-                    'options' => ['class' => 'alert-danger'],
-                ]);
+                Yii::$app->session->setFlash('error', Yii::t('frontend', 'Sorry, we are unable to reset password for email provided.'));
             }
 
             return $this->refresh();
@@ -209,10 +188,7 @@ class SignInController extends Controller
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-            Yii::$app->session->setFlash('alert', [
-                'body' => Yii::t('frontend', 'New password was saved.'),
-                'options' => ['class' => 'alert-success'],
-            ]);
+            Yii::$app->session->setFlash('success', Yii::t('frontend', 'New password was saved.'));
 
             return $this->goHome();
         }

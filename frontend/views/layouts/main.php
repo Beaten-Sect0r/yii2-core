@@ -8,6 +8,7 @@ use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use frontend\models\NavItem;
+use lo\modules\noty\widgets\Wrapper;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -76,12 +77,7 @@ AppAsset::register($this);
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-        <?php if (Yii::$app->session->hasFlash('alert')): ?>
-            <?= Alert::widget([
-                'body' => ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'body'),
-                'options' => ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'options'),
-            ]) ?>
-        <?php endif ?>
+        <?= Wrapper::widget() ?>
         <?= $content ?>
     </div>
 </div>

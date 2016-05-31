@@ -27,6 +27,7 @@
         "2amigos/yii2-disqus-widget": "*",
         "mihaildev/yii2-elfinder": "*",
         "trntv/yii2-datetime-widget": "*",
+        "loveorigami/yii2-notification-wrapper": "*",
         "bower-asset/admin-lte": "*",
         "bower-asset/html5shiv": "*",
         "bower-asset/timecircles": "*",

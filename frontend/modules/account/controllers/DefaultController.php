@@ -69,10 +69,7 @@ class DefaultController extends Controller
         $model->setUser(Yii::$app->user->identity);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('alert', [
-                'body' => Yii::t('frontend', 'Your password has been successfully changed.'),
-                'options' => ['class' => 'alert-success'],
-            ]);
+            Yii::$app->session->setFlash('success', Yii::t('frontend', 'Your password has been successfully changed.'));
 
             return $this->refresh();
         } else {
@@ -128,15 +125,9 @@ class DefaultController extends Controller
             $model = new MessageForm();
             if ($model->load(Yii::$app->request->post()) && $model->validate()) {
                 if ($model->sendEmail($user->email)) {
-                    Yii::$app->session->setFlash('alert', [
-                        'body' => Yii::t('frontend', 'Your message has been sent successfully.'),
-                        'options' => ['class' => 'alert-success'],
-                    ]);
+                    Yii::$app->session->setFlash('success', Yii::t('frontend', 'Your message has been sent successfully.'));
                 } else {
-                    Yii::$app->session->setFlash('alert', [
-                        'body' => Yii::t('frontend', 'There was an error sending email.'),
-                        'options' => ['class' => 'alert-danger'],
-                    ]);
+                    Yii::$app->session->setFlash('error', Yii::t('frontend', 'There was an error sending email.'));
                 }
 
                 return $this->refresh();

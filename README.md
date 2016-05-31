@@ -34,5 +34,6 @@ It covers typical use cases for a new project and will help you not to waste you
 - [DISQUS comments widget](https://github.com/2amigos/yii2-disqus-widget)
 - [ElFinder widget](https://github.com/MihailDev/yii2-elfinder)
 - [Datetimepicker widget](https://github.com/trntv/yii2-datetime-widget)
+- [Notification wrapper](https://github.com/loveorigami/yii2-notification-wrapper)
 - [Open Sans fonts](https://www.google.com/fonts/specimen/Open+Sans)
 - [JavaScript syntax highlighter](https://github.com/isagalaev/highlight.js)

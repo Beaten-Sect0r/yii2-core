@@ -14,6 +14,9 @@ $config = [
         'account' => [
             'class' => 'frontend\modules\account\Module',
         ],
+        'noty' => [
+            'class' => 'lo\modules\noty\Module',
+        ],
     ],
     'components' => [
         'urlManager' => require(__DIR__ . '/_urlManager.php'),
