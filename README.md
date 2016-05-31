@@ -20,7 +20,7 @@ It covers typical use cases for a new project and will help you not to waste you
 - RBAC with predefined `guest`, `user`, `manager` and `administrator` roles
 - Content management components: articles, categories, tags, static pages, editable menu
 - Useful behaviors (GlobalAccessBehavior, LastActionBehavior)
-- Yii2 log web interface
+- Log web interface
 - Cache web controller
 - [DB manager](https://github.com/Beaten-Sect0r/yii2-db-manager)
 - Maintenance mode component
