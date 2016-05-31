@@ -57,7 +57,7 @@ return [
     'Sorry, we are unable to reset password for email provided.' => 'Извините, мы не можем сбросить пароль для этого email.',
     'Subject' => 'Тема',
     'Text' => 'Текст',
-    'Thank you for contacting us. We will respond to you as soon as possible.' => 'Спасибо. Мы свяжемся с вами в ближайщее время.',
+    'Thank you for contacting us. We will respond to you as soon as possible.' => 'Спасибо. Мы свяжемся с вами в ближайшее время.',
     'There was an error sending email.' => 'Ошибка при отправке сообщения.',
     'Update' => 'Редактировать',
     'Username' => 'Имя пользователя',
