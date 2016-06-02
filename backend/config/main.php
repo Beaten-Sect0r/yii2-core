@@ -55,7 +55,7 @@ $config = [
     'modules' => [
         'db-manager' => [
             'class' => 'bs\dbManager\Module',
-            'path' => Yii::getAlias('@root/backup/'),
+            'path' => '@root/backups/',
             'as access' => [
                 'class' => 'common\behaviors\GlobalAccessBehavior',
                 'rules' => [
@@ -68,7 +68,7 @@ $config = [
         ],
         'webshell' => [
             'class' => 'samdark\webshell\Module',
-            'yiiScript' => Yii::getAlias('@root/yii'), // adjust path to point to your ./yii script
+            'yiiScript' => '@root/yii', // adjust path to point to your ./yii script
             'allowedIPs' => ['*'],
             'as access' => [
                 'class' => 'common\behaviors\GlobalAccessBehavior',
