@@ -55,7 +55,10 @@ $config = [
     'modules' => [
         'db-manager' => [
             'class' => 'bs\dbManager\Module',
-            'path' => '@root/backups/',
+            // path to directory for the dumps
+            'path' => '@root/backups',
+            // list of registerd db-components
+            'dbList' => ['db'],
             'as access' => [
                 'class' => 'common\behaviors\GlobalAccessBehavior',
                 'rules' => [
