@@ -5,6 +5,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Inflector;
 use yii\widgets\Breadcrumbs;
+use common\widgets\Alert;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -19,9 +20,7 @@ use yii\widgets\Breadcrumbs;
                 if ($this->title !== null) {
                     echo Html::encode($this->title);
                 } else {
-                    echo Inflector::camel2words(
-                        Inflector::id2camel($this->context->module->id)
-                    );
+                    echo Inflector::camel2words(Inflector::id2camel($this->context->module->id));
                     echo ($this->context->module->id !== Yii::$app->id) ? '<small>Module</small>' : '';
                 } ?>
             </h1>
@@ -31,12 +30,7 @@ use yii\widgets\Breadcrumbs;
     </section>
 
     <section class="content">
-        <?php if (Yii::$app->session->hasFlash('alert')): ?>
-            <?= Alert::widget([
-                'body' => ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'body'),
-                'options' => ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'options'),
-            ]) ?>
-        <?php endif ?>
+        <?= Alert::widget() ?>
         <div class="box">
            <div class="box-body">
                 <?= $content ?>

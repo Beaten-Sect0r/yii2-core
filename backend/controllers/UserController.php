@@ -111,10 +111,7 @@ class UserController extends Controller
     public function actionDelete($id)
     {
         if ($id == Yii::$app->user->id) {
-            Yii::$app->session->setFlash('alert', [
-                'body' => Yii::t('backend', 'You can not remove your own account.'),
-                'options' => ['class' => 'alert-danger'],
-            ]);
+            Yii::$app->session->setFlash('error', Yii::t('backend', 'You can not remove your own account.'));
         } else {
             // remove avatar
             $avatar = UserProfile::findOne($id)->avatar_path;
@@ -124,10 +121,7 @@ class UserController extends Controller
             Yii::$app->authManager->revokeAll($id);
             $this->findModel($id)->delete();
 
-            Yii::$app->session->setFlash('alert', [
-                'body' => Yii::t('backend', 'User has been deleted.'),
-                'options' => ['class' => 'alert-success'],
-            ]);
+            Yii::$app->session->setFlash('success', Yii::t('backend', 'User has been deleted.'));
         }
 
         return $this->redirect(['index']);

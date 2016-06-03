@@ -32,10 +32,7 @@ class CacheController extends Controller
     public function actionFlushCache($id)
     {
         if ($this->getCache($id)->flush()) {
-            Yii::$app->session->setFlash('alert', [
-                'body' => Yii::t('backend', 'Cache has been successfully flushed.'),
-                'options' => ['class' => 'alert-success'],
-            ]);
+            Yii::$app->session->setFlash('success', Yii::t('backend', 'Cache has been successfully flushed.'));
         };
 
         return $this->redirect(['index']);
@@ -50,10 +47,7 @@ class CacheController extends Controller
     public function actionFlushCacheKey($id, $key)
     {
         if ($this->getCache($id)->delete($key)) {
-            Yii::$app->session->setFlash('alert', [
-                'body' => Yii::t('backend', 'Cache entry has been successfully deleted.'),
-                'options' => ['class' => 'alert-success'],
-            ]);
+            Yii::$app->session->setFlash('success', Yii::t('backend', 'Cache entry has been successfully deleted.'));
         };
 
         return $this->redirect(['index']);
@@ -68,10 +62,7 @@ class CacheController extends Controller
     public function actionFlushCacheTag($id, $tag)
     {
         TagDependency::invalidate($this->getCache($id), $tag);
-        Yii::$app->session->setFlash('alert', [
-            'body' => Yii::t('backend', 'TagDependency was invalidated.'),
-            'options' => ['class' => 'alert-success'],
-        ]);
+        Yii::$app->session->setFlash('success', Yii::t('backend', 'TagDependency was invalidated.'));
 
         return $this->redirect(['index']);
     }

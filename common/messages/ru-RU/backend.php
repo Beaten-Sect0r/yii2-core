@@ -60,7 +60,6 @@ return [
     'Key storage' => 'Хранилище ключей',
     'Key storage items' => 'Записи',
     'Level' => 'Уровень',
-    'Log has been successfully cleared.' => 'Журнал был успешно очищен.',
     'Log time' => 'Время события',
     'Logout' => 'Выход',
     'Logs' => 'Журнал',
