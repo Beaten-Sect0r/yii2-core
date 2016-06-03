@@ -1,11 +1,9 @@
 <?php
 
-use yii\bootstrap\Alert;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Inflector;
 use yii\widgets\Breadcrumbs;
-use common\widgets\Alert;
+use lo\modules\noty\widgets\Wrapper;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -30,7 +28,7 @@ use common\widgets\Alert;
     </section>
 
     <section class="content">
-        <?= Alert::widget() ?>
+        <?= Wrapper::widget() ?>
         <div class="box">
            <div class="box-body">
                 <?= $content ?>
