@@ -18,5 +18,6 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
         'common\assets\OpenSans',
+        'common\assets\FontAwesome',
     ];
 }

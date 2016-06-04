@@ -47,7 +47,7 @@ class KeyStorage extends Component
             Yii::$app->cache->set($this->getCacheKey($key), $value, $this->cachingDuration);
 
             return true;
-        };
+        }
 
         return false;
     }
