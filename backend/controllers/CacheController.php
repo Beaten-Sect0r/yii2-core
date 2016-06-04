@@ -33,6 +33,7 @@ class CacheController extends Controller
     {
         if ($this->getCache($id)->flush()) {
             Yii::$app->session->setFlash('success', Yii::t('backend', 'Cache has been successfully flushed.'));
+        }
 
         return $this->redirect(['index']);
     }
