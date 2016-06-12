@@ -5,16 +5,19 @@ namespace console\controllers;
 use Yii;
 use yii\console\Controller;
 use yii\helpers\Console;
+use yii\helpers\StringHelper;
 use common\models\Article;
 use samdark\sitemap\Index;
 use samdark\sitemap\Sitemap;
 
 class SitemapController extends Controller
 {
-    public function actionGenerate($webUrl)
+    public function actionGenerate()
     {
+        $webUrl= Yii::getAlias('@frontendUrl');
+
         // проверка наличия слеша в конце ссылки
-        if (substr($webUrl, -1) != '/') {
+        if (!StringHelper::endsWith($webUrl, '/', false)) {
             $webUrl .= '/';
         }
 

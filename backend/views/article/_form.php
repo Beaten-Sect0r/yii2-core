@@ -79,7 +79,8 @@ use vova07\imperavi\Widget;
             $categories,
             'id',
             'title'
-        ), ['prompt' => '']) ?>
+        ), ['prompt' => '']
+    ) ?>
 
     <?= $form->field($model, 'published_at')->widget(
         DateTimeWidget::className(),
