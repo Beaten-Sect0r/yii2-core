@@ -18,7 +18,7 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
 2. Install composer-asset-plugin needed for yii assets management
 
-```
+```bash
 composer global require "fxp/composer-asset-plugin"
 ```
 
@@ -30,13 +30,13 @@ https://github.com/Beaten-Sect0r/yii2-core/archive/master.zip
 
 #### Or clone repository manually
 
-```
+```bash
 git clone https://github.com/Beaten-Sect0r/yii2-core.git
 ```
 
 #### Install composer dependencies
 
-```
+```bash
 composer install --prefer-dist
 ```
 
@@ -44,7 +44,7 @@ composer install --prefer-dist
 
 You can install this application template with `composer` using the following command:
 
-```
+```bash
 composer create-project --prefer-dist --stability=dev beaten-sect0r/yii2-core
 ```
 
@@ -88,7 +88,7 @@ Required PHP extensions:
 
 3. Run in command line
 
-```
+```bash
 php yii app/setup
 ```
 
@@ -122,7 +122,7 @@ STORAGE_URL = http://yii2-core/storage
 
 Adjust settings in `backend/config/main.php` file
 
-```
+```php
     ...
     'components'=>[
         ...
@@ -133,7 +133,7 @@ Adjust settings in `backend/config/main.php` file
 
 Adjust settings in `frontend/config/main.php` file
 
-```
+```php
     ...
     'components'=>[
         ...
@@ -148,7 +148,7 @@ Adjust settings in `frontend/config/main.php` file
 
 Single domain .htaccess for apache
 
-```
+```apache
 # Set the default charset.
 AddDefaultCharset UTF-8
 
