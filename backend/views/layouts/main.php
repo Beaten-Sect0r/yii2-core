@@ -36,12 +36,12 @@ if (Yii::$app->controller->action->id === 'login') {
     ]) ?>
     <?php $this->beginBody() ?>
     <div class="wrapper">
-        <?= $this->render('header.php') ?>
+        <?= $this->render('_header.php') ?>
 
-        <?= $this->render('left.php') ?>
+        <?= $this->render('_left.php') ?>
 
         <?= $this->render(
-            'content.php',
+            '_content.php',
             ['content' => $content]
         ) ?>
     </div>
