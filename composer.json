@@ -14,6 +14,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
+        "ext-intl": "*",
         "yiisoft/yii2": ">=2.0.6",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
@@ -41,8 +42,14 @@
         "yiisoft/yii2-gii": "*",
         "samdark/yii2-webshell": "*"
     },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.dist', '.env');\""
+        ],
+    },
     "config": {
-        "process-timeout": 1800
+        "process-timeout": 1800,
+        "optimize-autoloader": true
     },
     "extra": {
         "asset-installer-paths": {
