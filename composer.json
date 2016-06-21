@@ -45,7 +45,7 @@
     "scripts": {
         "post-root-package-install": [
             "php -r \"copy('.env.dist', '.env');\""
-        ],
+        ]
     },
     "config": {
         "process-timeout": 1800,
