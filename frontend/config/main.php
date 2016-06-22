@@ -19,21 +19,25 @@ $config = [
         ],
     ],
     'components' => [
-        'urlManager' => require(__DIR__ . '/_urlManager.php'),
-        'cache' => require(__DIR__ . '/_cache.php'),
+        'request' => [
+            'cookieValidationKey' => getenv('BACKEND_COOKIE_VALIDATION_KEY'),
+            'csrfParam' => '_csrf-frontend',
+        ],
         'user' => [
-            'class'=>'yii\web\User',
             'identityClass' => 'common\models\User',
             'loginUrl'=>['/account/sign-in/login'],
             'enableAutoLogin' => true,
+            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
-        'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => getenv('BACKEND_COOKIE_VALIDATION_KEY'),
+        'session' => [
+            // this is the name of the session cookie used for login on the frontend
+            'name' => 'advanced-frontend',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'urlManager' => require(__DIR__ . '/_urlManager.php'),
+        'cache' => require(__DIR__ . '/_cache.php'),
     ],
     'as beforeAction' => [
         'class' => 'common\behaviors\LastActionBehavior',

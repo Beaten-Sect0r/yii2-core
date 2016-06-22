@@ -38,19 +38,24 @@ $config = [
         ],
     ],
     'components' => [
-        'urlManager' => require(__DIR__ . '/_urlManager.php'),
-        'frontendCache' => require(Yii::getAlias('@frontend/config/_cache.php')),
+        'request' => [
+            'cookieValidationKey' => getenv('BACKEND_COOKIE_VALIDATION_KEY'),
+            'csrfParam' => '_csrf-backend',
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
+            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
-        'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => getenv('BACKEND_COOKIE_VALIDATION_KEY'),
+        'session' => [
+            // this is the name of the session cookie used for login on the backend
+            'name' => 'advanced-backend',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'urlManager' => require(__DIR__ . '/_urlManager.php'),
+        'frontendCache' => require(Yii::getAlias('@frontend/config/_cache.php')),
     ],
     'modules' => [
         'db-manager' => [

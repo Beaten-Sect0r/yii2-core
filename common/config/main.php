@@ -31,7 +31,7 @@ $config = [
                 [
                     'class' => 'yii\log\DbTarget',
                     'levels' => ['error', 'warning'],
-                    'except' => ['yii\web\HttpException:*', 'yii\i18n\I18N\*', 'yii\log\Dispatcher::*'],
+                    'except' => ['yii\web\HttpException:*', 'yii\i18n\I18N\*'],
                     'prefix' => function () {
                         $url = !Yii::$app->request->isConsoleRequest ? Yii::$app->request->getUrl() : null;
 
