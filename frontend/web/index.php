@@ -1,5 +1,8 @@
 <?php
 
+use yii\helpers\ArrayHelper;
+use yii\web\Application;
+
 // Composer
 require(__DIR__ . '/../../vendor/autoload.php');
 
@@ -13,7 +16,7 @@ require(__DIR__ . '/../../vendor/yiisoft/yii2/Yii.php');
 require(__DIR__ . '/../../common/config/bootstrap.php');
 require(__DIR__ . '/../config/bootstrap.php');
 
-$config = yii\helpers\ArrayHelper::merge(
+$config = ArrayHelper::merge(
     require(__DIR__ . '/../../common/config/main.php'),
     require(__DIR__ . '/../config/main.php')
 );
@@ -26,5 +29,5 @@ if (YII_ENV_DEV) {
     error_reporting(0);
 }
 
-$application = new yii\web\Application($config);
+$application = new Application($config);
 $application->run();

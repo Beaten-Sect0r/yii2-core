@@ -1,21 +1,27 @@
 #!/usr/bin/env php
 <?php
 
+use yii\console\Application;
+use yii\helpers\ArrayHelper;
+
 // Composer
 require(__DIR__ . '/vendor/autoload.php');
+
 // Environment
 require(__DIR__ . '/common/env.php');
+
 // Yii2
 require(__DIR__ . '/vendor/yiisoft/yii2/Yii.php');
+
 // Bootstrap application
 require(__DIR__ . '/common/config/bootstrap.php');
 require(__DIR__ . '/console/config/bootstrap.php');
 
-$config = yii\helpers\ArrayHelper::merge(
+$config = ArrayHelper::merge(
     require(__DIR__ . '/common/config/main.php'),
     require(__DIR__ . '/console/config/main.php')
 );
 
-$application = new yii\console\Application($config);
+$application = new Application($config);
 $exitCode = $application->run();
 exit($exitCode);
