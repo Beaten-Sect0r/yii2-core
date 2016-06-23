@@ -1,5 +1,10 @@
 # Yii2 Core
 
+[![Total Downloads](https://poser.pugx.org/beaten-sect0r/yii2-core/downloads?format=flat-square)](https://packagist.org/packages/beaten-sect0r/yii2-core)
+[![Latest Stable Version](https://poser.pugx.org/beaten-sect0r/yii2-core/v/stable?format=flat-square)](https://packagist.org/packages/beaten-sect0r/yii2-core)
+[![Latest Unstable Version](https://poser.pugx.org/beaten-sect0r/yii2-core/v/unstable?format=flat-square)](https://packagist.org/packages/beaten-sect0r/yii2-core)
+[![License](https://poser.pugx.org/beaten-sect0r/yii2-core/license?format=flat-square)](https://packagist.org/packages/beaten-sect0r/yii2-core)
+
 Yii2 Core Project Template.
 
 It was created and developing as a fast start for building an advanced sites based on Yii2. 
