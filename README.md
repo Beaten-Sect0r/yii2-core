@@ -15,6 +15,7 @@ It covers typical use cases for a new project and will help you not to waste you
 
 - [Installation](docs/installation.md)
 - [Features](#features)
+- [Screenshots](#screenshots)
 
 ## Features
 
@@ -42,3 +43,8 @@ It covers typical use cases for a new project and will help you not to waste you
 - [Notification wrapper](https://github.com/loveorigami/yii2-notification-wrapper)
 - [Open Sans fonts](https://www.google.com/fonts/specimen/Open+Sans)
 - [JavaScript syntax highlighter](https://github.com/isagalaev/highlight.js)
+
+## Screenshots
+
+![backend](docs/img/backend.png)
+![frontend](docs/img/frontend.png)
