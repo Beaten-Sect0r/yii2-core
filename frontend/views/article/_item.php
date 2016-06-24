@@ -19,7 +19,7 @@ Highlight::register($this);
     </h2>
 
     <div class="article-meta">
-        <span class="glyphicon glyphicon-time"></span> <?= Yii::$app->formatter->asDatetime($model->created_at) ?>
+        <span class="glyphicon glyphicon-time"></span> <?= Yii::$app->formatter->asDatetime($model->published_at) ?>
         <span class="glyphicon glyphicon-folder-close"></span> <?= Html::a($model->category->title, ['article/category', 'slug' => $model->category->slug]) ?>
         <span class="glyphicon glyphicon-user"></span> <?= Html::a($model->author->username, ['account/default/view', 'id' => $model->author->id]) ?>
     </div>
