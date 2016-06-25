@@ -1,6 +1,6 @@
 <?php
 
-use yii\helpers\Html;
+use yii\bootstrap\Html;
 use yii\helpers\Inflector;
 use yii\widgets\Breadcrumbs;
 use lo\modules\noty\widgets\Wrapper;

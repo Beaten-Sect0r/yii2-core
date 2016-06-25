@@ -5,7 +5,7 @@ use common\components\keyStorage\FormWidget;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\KeyStorageItem */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $form yii\bootstrap\ActiveForm */
 
 $this->title = Yii::t('backend', 'Application settings');
 $this->params['breadcrumbs'][] = $this->title;

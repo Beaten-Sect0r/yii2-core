@@ -1,9 +1,9 @@
 <?php
 
 use yii\bootstrap\ActiveForm;
+use yii\bootstrap\Html;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */

@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\modules\account\models\PasswordForm */
+/* @var $form yii\widgets\ActiveForm */
 
 $this->title = Yii::t('frontend', 'Change password');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('frontend', 'Settings'), 'url' => ['settings']];

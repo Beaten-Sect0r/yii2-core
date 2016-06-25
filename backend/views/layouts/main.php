@@ -1,6 +1,6 @@
 <?php
 
-use yii\helpers\Html;
+use yii\bootstrap\Html;
 use backend\assets\AppAsset;
 
 /* @var $this \yii\web\View */

@@ -1,12 +1,12 @@
 <?php
 
-use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \frontend\modules\account\models\PasswordResetRequestForm */
+/* @var $form yii\widgets\ActiveForm */
+/* @var $model frontend\modules\account\models\PasswordResetRequestForm */
 
 $this->title = Yii::t('frontend', 'Request password reset');
 $this->params['breadcrumbs'][] = $this->title;

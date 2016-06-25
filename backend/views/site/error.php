@@ -1,6 +1,6 @@
 <?php
 
-use yii\helpers\Html;
+use yii\bootstrap\Html;
 
 /* @var $this yii\web\View */
 /* @var $name string */

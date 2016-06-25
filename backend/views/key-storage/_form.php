@@ -1,7 +1,7 @@
 <?php
 
 use yii\bootstrap\ActiveForm;
-use yii\helpers\Html;
+use yii\bootstrap\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\KeyStorageItem */

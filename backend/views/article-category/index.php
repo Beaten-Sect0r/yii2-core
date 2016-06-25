@@ -1,8 +1,8 @@
 <?php
 
+use yii\bootstrap\Html;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
 use common\models\ArticleCategory;
 
 /* @var $this yii\web\View */

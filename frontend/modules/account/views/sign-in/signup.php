@@ -1,12 +1,12 @@
 <?php
 
-use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \frontend\modules\account\models\SignupForm */
+/* @var $form yii\widgets\ActiveForm */
+/* @var $model frontend\modules\account\models\SignupForm */
 
 $this->title = Yii::t('frontend', 'Signup');
 $this->params['breadcrumbs'][] = $this->title;

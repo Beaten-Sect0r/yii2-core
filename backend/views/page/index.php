@@ -1,7 +1,7 @@
 <?php
 
+use yii\bootstrap\Html;
 use yii\grid\GridView;
-use yii\helpers\Html;
 use common\models\Page;
 
 /* @var $this yii\web\View */

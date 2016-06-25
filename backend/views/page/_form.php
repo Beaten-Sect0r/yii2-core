@@ -1,13 +1,13 @@
 <?php
 
-use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+use yii\bootstrap\Html;
 use yii\helpers\Url;
-use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Page */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $form yii\bootstrap\ActiveForm */
 ?>
 
 <div class="page-form">

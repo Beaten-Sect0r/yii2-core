@@ -1,16 +1,16 @@
 <?php
 
+use yii\bootstrap\ActiveForm;
+use yii\bootstrap\Html;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\widgets\ActiveForm;
 use dosamigos\selectize\SelectizeTextInput;
 use trntv\yii\datetime\DateTimeWidget;
 use vova07\imperavi\Widget;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Article */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $form yii\bootstrap\ActiveForm */
 ?>
 
 <div class="article-form">

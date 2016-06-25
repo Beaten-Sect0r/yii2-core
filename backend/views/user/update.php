@@ -1,7 +1,7 @@
 <?php
 
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\bootstrap\ActiveForm;
+use yii\bootstrap\Html;
 use common\models\User;
 use common\models\UserProfile;
 use trntv\yii\datetime\DateTimeWidget;
@@ -10,7 +10,7 @@ use vova07\fileapi\Widget;
 /* @var $this yii\web\View */
 /* @var $profile common\models\UserProfile */
 /* @var $user backend\models\UserForm */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $form yii\bootstrap\ActiveForm */
 /* @var $roles yii\rbac\Role[] */
 /* @var $permissions yii\rbac\Permission[] */
 

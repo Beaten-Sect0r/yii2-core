@@ -1,8 +1,8 @@
 <?php
 
+use yii\bootstrap\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
-use yii\helpers\Html;
 use backend\models\Log;
 
 /* @var $this \yii\web\View */
