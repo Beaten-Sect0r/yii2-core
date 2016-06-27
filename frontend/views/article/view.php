@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <hr/>
                 <!--noindex-->
                     <?= Comments::widget([
-                        'shortname' => getenv('SHORT_NAME'),
+                        'shortname' => env('SHORT_NAME'),
                         'identifier' => Html::encode($model->slug),
                     ]) ?>
                 <!--/noindex-->

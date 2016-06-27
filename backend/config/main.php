@@ -39,7 +39,7 @@ $config = [
     ],
     'components' => [
         'request' => [
-            'cookieValidationKey' => getenv('BACKEND_COOKIE_VALIDATION_KEY'),
+            'cookieValidationKey' => env('BACKEND_COOKIE_VALIDATION_KEY'),
             'csrfParam' => '_csrf-backend',
         ],
         'user' => [

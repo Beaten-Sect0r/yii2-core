@@ -13,6 +13,6 @@ Yii::setAlias('storage', realpath(__DIR__ . '/../../storage'));
 /**
  * Setting url aliases
  */
-Yii::setAlias('frontendUrl', getenv('FRONTEND_URL'));
-Yii::setAlias('backendUrl', getenv('BACKEND_URL'));
-Yii::setAlias('storageUrl', getenv('STORAGE_URL'));
+Yii::setAlias('frontendUrl', env('FRONTEND_URL'));
+Yii::setAlias('backendUrl', env('BACKEND_URL'));
+Yii::setAlias('storageUrl', env('STORAGE_URL'));

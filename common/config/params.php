@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'adminEmail' => getenv('ADMIN_EMAIL'),
-    'robotEmail' => getenv('ROBOT_EMAIL'),
+    'adminEmail' => env('ADMIN_EMAIL'),
+    'robotEmail' => env('ROBOT_EMAIL'),
 ];
