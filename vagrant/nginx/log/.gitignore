@@ -1,0 +1,7 @@
+# nginx logs
+backend-access.log
+backend-error.log
+frontend-access.log
+frontend-error.log
+storage-access.log
+storage-error.log
