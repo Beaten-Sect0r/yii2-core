@@ -49,7 +49,7 @@ Vagrant.configure(2) do |config|
   # network settings
   config.vm.network 'private_network', ip: options['ip']
 
-  # sync: folder 'yii2-app-advanced' (host machine) -> folder '/app' (guest machine)
+  # sync: folder 'yii2-core' (host machine) -> folder '/app' (guest machine)
   config.vm.synced_folder './', '/app', owner: 'vagrant', group: 'vagrant'
 
   # disable folder '/vagrant' (guest machine)
@@ -62,6 +62,12 @@ Vagrant.configure(2) do |config|
   config.hostmanager.ignore_private_ip = false
   config.hostmanager.include_offline = true
   config.hostmanager.aliases = domains.values
+
+  # fix "stdin: is not a tty"
+  config.vm.provision "fix-no-tty", type: "shell" do |s|
+    s.privileged = false
+    s.inline = "sudo sed -i '/tty/!s/mesg n/tty -s \\&\\& mesg n/' /root/.profile"
+  end
 
   # provisioners
   config.vm.provision 'shell', path: './vagrant/provision/once-as-root.sh', args: [options['timezone']]

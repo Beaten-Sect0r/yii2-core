@@ -20,7 +20,7 @@ $config = [
     ],
     'components' => [
         'request' => [
-            'cookieValidationKey' => env('BACKEND_COOKIE_VALIDATION_KEY'),
+            'cookieValidationKey' => getenv('BACKEND_COOKIE_VALIDATION_KEY'),
             'csrfParam' => '_csrf-frontend',
         ],
         'user' => [

@@ -14,8 +14,6 @@ function info {
 
 #== Provision script ==
 
-info "Provision-script user: `whoami`"
-
 info "Allocate swap for MySQL 5.6"
 fallocate -l 2048M /swapfile
 chmod 600 /swapfile
@@ -41,7 +39,8 @@ apt-get update
 apt-get upgrade -y
 
 info "Install additional software"
-apt-get install -y git zip unzip php5-curl php5-cli php5-intl php5-mysqlnd php5-gd php5-fpm nginx mysql-server-5.6
+apt-get install -y git php5-curl php5-cli php5-intl php5-mcrypt php5-mysqlnd php5-gd php5-fpm nginx mysql-server-5.6
+php5enmod mcrypt
 
 info "Configure MySQL"
 sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
@@ -62,7 +61,7 @@ ln -s /app/vagrant/nginx/app.conf /etc/nginx/sites-enabled/app.conf
 echo "Done!"
 
 info "Initailize databases for MySQL"
-mysql -uroot <<< "CREATE DATABASE yii2-core"
+mysql -uroot <<< "CREATE DATABASE \`yii2-core\`"
 echo "Done!"
 
 info "Install composer"

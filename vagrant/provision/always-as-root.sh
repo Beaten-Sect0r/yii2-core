@@ -10,9 +10,9 @@ function info {
 
 #== Provision script ==
 
-info "Provision-script user: `whoami`"
-
 info "Restart web-stack"
 service php5-fpm restart
 service nginx restart
 service mysql restart
+
+cat "/app/vagrant/provision/ascii-art/planet-express.txt"

@@ -14,18 +14,12 @@ function info {
 
 #== Provision script ==
 
-info "Provision-script user: `whoami`"
-
 info "Configure composer"
 composer config --global github-oauth.github.com ${github_token}
 echo "Done!"
 
 info "Install plugins for composer"
-composer global require fxp/composer-asset-plugin --no-progress
-
-info "Install codeception"
-composer global require "codeception/codeception=2.0.*" "codeception/specify=*" "codeception/verify=*" --no-progress
-echo 'export PATH=/home/vagrant/.config/composer/vendor/bin:$PATH' | tee -a /home/vagrant/.profile
+composer global require "fxp/composer-asset-plugin:~1.1.1" --no-progress --prefer-dist
 
 info "Install project dependencies"
 cd /app
@@ -33,7 +27,7 @@ composer install --no-progress --prefer-dist
 
 info "Init project"
 cp .env.dist .env
-./yii app/setup --interactive=0
+php yii app/setup --interactive=0
 
 info "Create bash-alias 'app' for vagrant user"
 echo 'alias app="cd /app"' | tee /home/vagrant/.bash_aliases

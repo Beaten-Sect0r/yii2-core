@@ -13,10 +13,10 @@ box_check_update: false
 machine_name: yii2-core
 
 # Virtual machine IP
-ip: 192.168.83.137
+ip: 192.168.13.37
 
 # Virtual machine CPU cores number
 cpus: 1
 
 # Virtual machine RAM
-memory: 512
+memory: 1024
