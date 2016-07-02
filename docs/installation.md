@@ -10,6 +10,7 @@
     - [Configure your web server](#configure-your-web-server)
     - [Single domain installtion](#single-domain-installation)
     - [Video instruction](#video-instruction)
+- [Vagrant installation](#vagrant-installation)
 
 ## Before you begin
 
@@ -177,3 +178,27 @@ RewriteRule ^(.*)$ frontend/web/$1
 ### Video instruction
 
 [https://www.youtube.com/watch?v=XAC5joagA70](https://www.youtube.com/watch?v=XAC5joagA70)
+
+## Vagrant installation
+
+This way is the easiest but long (~20 min).
+
+**This installation way doesn't require pre-installed software (such as web-server, PHP, MySQL etc.)** - just do next steps!
+
+1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+2. Install [Vagrant](https://www.vagrantup.com/downloads.html)
+3. Create GitHub [personal API token](https://github.com/blog/1509-personal-api-tokens)
+4. Copy `vagrant-local.example.yml` to `vagrant-local.yml`
+5. Place your GitHub personal API token to `vagrant-local.yml`
+6. Run commands:
+
+    ```bash
+    cd yii2-core
+    vagrant plugin install vagrant-hostmanager
+    vagrant up
+    ```
+
+That's all. You just need to wait for completion! After that you can access project locally by URLs:
+* frontend: http://yii2-core.dev
+* backend: http://backend.yii2-core.dev
+* storage: http://storage.yii2-core.dev
