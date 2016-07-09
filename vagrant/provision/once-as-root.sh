@@ -65,4 +65,8 @@ mysql -uroot <<< "CREATE DATABASE \`yii2-core\`"
 echo "Done!"
 
 info "Install composer"
-curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+if [ ! -f /usr/local/bin/composer ]; then
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+else
+    composer self-update
+fi

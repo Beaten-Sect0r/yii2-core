@@ -21,12 +21,20 @@ echo "Done!"
 info "Install plugins for composer"
 composer global require "fxp/composer-asset-plugin:~1.1.1" --no-progress --prefer-dist
 
-info "Install project dependencies"
+info "Changing working directory"
 cd /app
-composer install --no-progress --prefer-dist
+
+info "Install project dependencies"
+if [ ! -d vendor ]; then
+    composer install --no-progress --prefer-dist
+else
+    composer update --no-progress --prefer-dist
+fi
 
 info "Init project"
-cp .env.dist .env
+if [ ! -f .env ]; then
+    cp .env.dist .env
+fi
 php yii app/setup --interactive=0
 
 info "Create bash-alias 'app' for vagrant user"
