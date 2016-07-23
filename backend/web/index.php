@@ -29,5 +29,4 @@ if (YII_ENV_DEV) {
     error_reporting(0);
 }
 
-$application = new Application($config);
-$application->run();
+(new Application($config))->run();

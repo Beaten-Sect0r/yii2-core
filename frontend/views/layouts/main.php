@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use frontend\models\NavItem;
-use lo\modules\noty\widgets\Wrapper;
+use lo\modules\noty\Wrapper;
 
 /* @var $this \yii\web\View */
 /* @var $content string */

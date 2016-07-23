@@ -22,6 +22,5 @@ $config = ArrayHelper::merge(
     require(__DIR__ . '/console/config/main.php')
 );
 
-$application = new Application($config);
-$exitCode = $application->run();
+$exitCode = (new Application($config))->run();
 exit($exitCode);

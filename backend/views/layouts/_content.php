@@ -3,7 +3,7 @@
 use yii\bootstrap\Html;
 use yii\helpers\Inflector;
 use yii\widgets\Breadcrumbs;
-use lo\modules\noty\widgets\Wrapper;
+use lo\modules\noty\Wrapper;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
