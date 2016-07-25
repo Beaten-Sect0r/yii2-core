@@ -22,7 +22,7 @@ $config = [
         ],
         'assetManager' => [
             'class' => 'yii\web\AssetManager',
-            'linkAssets' => true,
+            'linkAssets' => getenv('LINK_ASSETS'),
             'appendTimestamp' => YII_ENV_DEV,
         ],
         'log' => [
