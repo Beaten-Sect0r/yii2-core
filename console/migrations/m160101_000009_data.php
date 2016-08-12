@@ -1,6 +1,8 @@
 <?php
 
 use yii\db\Migration;
+use common\models\Menu;
+use common\models\Page;
 use common\models\User;
 
 class m160101_000009_data extends Migration
@@ -21,6 +23,21 @@ class m160101_000009_data extends Migration
 
         $this->insert('{{%user_profile}}', [
             'user_id' => 1,
+        ]);
+
+        $this->insert('{{%menu}}', [
+            'url' => 'page/about',
+            'label' => 'About',
+            'status' => Menu::STATUS_ACTIVE,
+        ]);
+
+        $this->insert('{{%page}}', [
+            'slug' => 'about',
+            'title' => 'About',
+            'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'status' => Page::STATUS_ACTIVE,
+            'created_at' => time(),
+            'updated_at' => time(),
         ]);
 
         $this->insert('{{%key_storage_item}}', [
@@ -73,6 +90,14 @@ class m160101_000009_data extends Migration
             'key' => 'frontend.registration',
             'key' => 'frontend.email-confirm',
             'key' => 'frontend.maintenance',
+        ]);
+
+        $this->delete('{{%page}}', [
+            'slug' => 'about',
+        ]);
+
+        $this->delete('{{%menu}}', [
+            'url' => 'page/about'
         ]);
 
         $this->delete('{{%user_profile}}', [
