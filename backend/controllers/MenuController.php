@@ -60,7 +60,7 @@ class MenuController extends Controller
     {
         $model = new Menu();
 
-        $links = Menu::find()->noParents()->all();
+        $links = Menu::find()->noParents()->active()->all();
         $links = ArrayHelper::map($links, 'id', 'label');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -84,7 +84,7 @@ class MenuController extends Controller
     {
         $model = $this->findModel($id);
 
-        $links = Menu::find()->noParents()->all();
+        $links = Menu::find()->noParents()->andWhere(['not', ['id' => $id]])->active()->all();
         $links = ArrayHelper::map($links, 'id', 'label');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
