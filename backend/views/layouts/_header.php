@@ -3,6 +3,7 @@
 use yii\bootstrap\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\log\Logger;
 use backend\models\Log;
 
 /* @var $this \yii\web\View */
@@ -27,7 +28,7 @@ use backend\models\Log;
                                 <?php foreach (Log::find()->orderBy(['log_time' => SORT_DESC])->limit(5)->all() as $logEntry): ?>
                                     <li>
                                         <a href="<?= Yii::$app->urlManager->createUrl(['/log/view', 'id' => $logEntry->id]) ?>">
-                                            <i class="fa fa-warning <?= $logEntry->level == \yii\log\Logger::LEVEL_ERROR ? 'text-red' : 'text-yellow' ?>"></i>
+                                            <i class="fa fa-warning <?= $logEntry->level == Logger::LEVEL_ERROR ? 'text-red' : 'text-yellow' ?>"></i>
                                             <?= $logEntry->category ?>
                                         </a>
                                     </li>

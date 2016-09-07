@@ -5,17 +5,25 @@ namespace backend\widgets;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\widgets\Menu as WidgetMenu;
+use yii\widgets\Menu as BaseMenu;
 
 /**
  * Class Menu.
  */
-class Menu extends WidgetMenu
+class Menu extends BaseMenu
 {
     /**
      * @var string
      */
     public $linkTemplate = "<a href=\"{url}\">\n{icon}\n{label}\n{right-icon}\n{badge}</a>";
+    /**
+     * @var string
+     */
+    public $submenuTemplate = "\n<ul class=\"treeview-menu\">\n{items}\n</ul>\n";
+    /**
+     * @var bool
+     */
+    public $activateParents = true;
     /**
      * @var string
      */
@@ -35,7 +43,7 @@ class Menu extends WidgetMenu
     /**
      * @var string
      */
-    public $parentRightIcon = '<i class="fa fa-angle-left pull-right"></i>';
+    public $parentRightIcon = '<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>';
 
     /**
      * @inheritdoc
@@ -58,7 +66,11 @@ class Menu extends WidgetMenu
 
             return strtr($template, [
                 '{badge}' => isset($item['badge'])
-                    ? Html::tag('small', $item['badge'], $item['badgeOptions'])
+                    ? Html::tag(
+                        'span',
+                        Html::tag('small', $item['badge'], $item['badgeOptions']),
+                        ['class' => 'pull-right-container']
+                    )
                     : '',
                 '{icon}' => isset($item['icon']) ? $item['icon'] : '',
                 '{right-icon}' => isset($item['right-icon']) ? $item['right-icon'] : '',

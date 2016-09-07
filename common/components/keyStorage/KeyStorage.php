@@ -22,7 +22,7 @@ class KeyStorage extends Component
     /**
      * @var string
      */
-    public $modelClass = '\common\models\KeyStorageItem';
+    public $modelClass = 'common\models\KeyStorageItem';
 
     /**
      * @var array Runtime values cache
@@ -64,8 +64,8 @@ class KeyStorage extends Component
 
     /**
      * @param $key
-     * @param null     $default
-     * @param bool     $cache
+     * @param null $default
+     * @param bool $cache
      * @param int|bool $cachingDuration
      * @return mixed|null
      */
@@ -162,7 +162,7 @@ class KeyStorage extends Component
     {
         $query = call_user_func($this->modelClass . '::find');
 
-        return $query->where(['key' => $key])->select(['key', 'value'])->one();
+        return $query->where(['key'=>$key])->one();
     }
 
     /**

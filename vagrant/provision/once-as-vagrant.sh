@@ -19,7 +19,7 @@ composer config --global github-oauth.github.com ${github_token}
 echo "Done!"
 
 info "Install plugins for composer"
-composer global require "fxp/composer-asset-plugin:~1.1.1" --no-progress --prefer-dist
+composer global require "fxp/composer-asset-plugin:^1.2.0" --no-progress --prefer-dist
 
 info "Changing working directory"
 cd /app

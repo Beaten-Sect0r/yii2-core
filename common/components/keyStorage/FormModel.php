@@ -213,7 +213,7 @@ class FormModel extends Model
     {
         try {
             return $this->__get($name) !== null;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return false;
         }
     }
