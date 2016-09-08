@@ -162,7 +162,7 @@ class KeyStorage extends Component
     {
         $query = call_user_func($this->modelClass . '::find');
 
-        return $query->where(['key'=>$key])->one();
+        return $query->where(['key' => $key])->one();
     }
 
     /**
