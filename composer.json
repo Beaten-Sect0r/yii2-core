@@ -45,7 +45,7 @@
         "samdark/yii2-webshell": "*"
     },
     "scripts": {
-        "post-root-package-install": [
+        "post-update-cmd": [
             "php -r \"file_exists('.env') || copy('.env.dist', '.env');\""
         ]
     },
