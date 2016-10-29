@@ -78,7 +78,7 @@ return [
     'Roles' => 'Роли',
     'Save' => 'Сохранить',
     'Select cache' => 'Выберите кеш',
-    'Settings was successfully saved.' => 'Настройки были успешно сохранены.',
+    'Settings successfully saved.' => 'Настройки успешно сохранены.',
     'Sign in' => 'Вход',
     'Static pages' => 'Статические страницы',
     'Status' => 'Статус',

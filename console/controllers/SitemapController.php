@@ -66,6 +66,6 @@ class SitemapController extends Controller
         // write it
         $index->write();
 
-        Console::output('The sitemap was generated successfully.');
+        Console::output('The sitemap generated successfully.');
     }
 }

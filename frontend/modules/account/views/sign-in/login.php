@@ -1,7 +1,6 @@
 <?php
 
 use yii\helpers\Html;
-use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -22,9 +21,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="form-group">
             <div class="btn-group">
-                <a href="<?= Url::to(['sign-in/signup']) ?>" class="btn btn-success"><?= Yii::t('frontend', 'Signup') ?></a>
+                <?= Html::a(Yii::t('frontend', 'Signup'), ['sign-in/signup'], ['class' => 'btn btn-success']) ?>
 
-                <a href="<?= Url::to(['sign-in/request-password-reset']) ?>" class="btn btn-danger"><?= Yii::t('frontend', 'Lost password') ?></a>
+                <?= Html::a(Yii::t('frontend', 'Lost password'), ['sign-in/request-password-reset'], ['class' => 'btn btn-danger']) ?>
             </div>
         </div>
                 

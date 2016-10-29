@@ -53,7 +53,7 @@ class SiteController extends Controller
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
                 Yii::$app->session->setFlash('success', Yii::t('frontend', 'Thank you for contacting us. We will respond to you as soon as possible.'));
             } else {
-                Yii::$app->session->setFlash('error', Yii::t('frontend', 'There was an error sending email.'));
+                Yii::$app->session->setFlash('error', Yii::t('frontend', 'There was an error sending your message.'));
             }
 
             return $this->refresh();

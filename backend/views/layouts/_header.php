@@ -3,6 +3,7 @@
 use yii\bootstrap\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\helpers\Url;
 use yii\log\Logger;
 use backend\models\Log;
 
@@ -27,7 +28,7 @@ use backend\models\Log;
                             <ul class="menu">
                                 <?php foreach (Log::find()->orderBy(['log_time' => SORT_DESC])->limit(5)->all() as $logEntry): ?>
                                     <li>
-                                        <a href="<?= Yii::$app->urlManager->createUrl(['/log/view', 'id' => $logEntry->id]) ?>">
+                                        <a href="<?= Url::to(['/log/view', 'id' => $logEntry->id]) ?>">
                                             <i class="fa fa-warning <?= $logEntry->level == Logger::LEVEL_ERROR ? 'text-red' : 'text-yellow' ?>"></i>
                                             <?= $logEntry->category ?>
                                         </a>
@@ -63,24 +64,16 @@ use backend\models\Log;
                         </li>
                         <li class="user-footer">
                             <div class="pull-left">
-                                <?= Html::a(
-                                    Yii::t('backend', 'Profile'),
-                                    ['/user/update', 'id' => Yii::$app->user->id],
-                                    ['class' => 'btn btn-default btn-flat']
-                                ) ?>
+                                <?= Html::a(Yii::t('backend', 'Profile'), ['/user/update', 'id' => Yii::$app->user->id], ['class' => 'btn btn-default btn-flat']) ?>
                             </div>
                             <div class="pull-right">
-                                <?= Html::a(
-                                    Yii::t('backend', 'Logout'),
-                                    ['/site/logout'],
-                                    ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
-                                ) ?>
+                                <?= Html::a(Yii::t('backend', 'Logout'), ['/site/logout'], ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']) ?>
                             </div>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="<?= Yii::$app->homeUrl ?>/site/settings"><i class="fa fa-cogs"></i></a>
+                    <?= Html::a('<i class="fa fa-cogs"></i>', ['/site/settings']) ?>
                 </li>
             </ul>
         </div>

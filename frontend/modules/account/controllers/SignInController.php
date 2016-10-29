@@ -105,7 +105,7 @@ class SignInController extends Controller
                         if ($model->sendEmail()) {
                             Yii::$app->session->setFlash('success', Yii::t('frontend', 'Your account has been successfully created. Check your email for further instructions.'));
                         } else {
-                            Yii::$app->session->setFlash('error', Yii::t('frontend', 'There was an error sending email.'));
+                            Yii::$app->session->setFlash('error', Yii::t('frontend', 'There was an error sending your message.'));
                         }
 
                         return $this->refresh();
@@ -161,7 +161,7 @@ class SignInController extends Controller
             if ($model->sendEmail()) {
                 Yii::$app->session->setFlash('success', Yii::t('frontend', 'Check your email for further instructions.'));
             } else {
-                Yii::$app->session->setFlash('error', Yii::t('frontend', 'Sorry, we are unable to reset password for email provided.'));
+                Yii::$app->session->setFlash('error', Yii::t('frontend', 'Sorry, we are unable to reset password for the provided email address.'));
             }
 
             return $this->refresh();
@@ -188,7 +188,7 @@ class SignInController extends Controller
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-            Yii::$app->session->setFlash('success', Yii::t('frontend', 'New password was saved.'));
+            Yii::$app->session->setFlash('success', Yii::t('frontend', 'New password saved.'));
 
             return $this->goHome();
         }

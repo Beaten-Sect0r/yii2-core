@@ -166,7 +166,7 @@ class SiteController extends Controller
         ]);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', Yii::t('backend', 'Settings was successfully saved.'));
+            Yii::$app->session->setFlash('success', Yii::t('backend', 'Settings successfully saved.'));
 
             return $this->refresh();
         }

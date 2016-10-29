@@ -127,7 +127,7 @@ class DefaultController extends Controller
                 if ($model->sendEmail($user->email)) {
                     Yii::$app->session->setFlash('success', Yii::t('frontend', 'Your message has been sent successfully.'));
                 } else {
-                    Yii::$app->session->setFlash('error', Yii::t('frontend', 'There was an error sending email.'));
+                    Yii::$app->session->setFlash('error', Yii::t('frontend', 'There was an error sending your message.'));
                 }
 
                 return $this->refresh();
