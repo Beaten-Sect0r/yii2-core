@@ -74,6 +74,18 @@ $config = [
                 ],
             ],
         ],
+        'rbac' => [
+            'class' => 'developeruz\db_rbac\Yii2DbRbac',
+            'as access' => [
+                'class' => 'common\behaviors\GlobalAccessBehavior',
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['administrator'],
+                    ],
+                ],
+            ],
+        ],
         'webshell' => [
             'class' => 'samdark\webshell\Module',
             'yiiScript' => '@root/yii', // adjust path to point to your ./yii script

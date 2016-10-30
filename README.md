@@ -33,6 +33,7 @@ It covers typical use cases for a new project and will help you not to waste you
 - [Key storage component](https://github.com/trntv/yii2-starter-kit/tree/master/common/components/keyStorage)
 - [dotenv support](https://github.com/vlucas/phpdotenv)
 - [Sitemap and sitemap index builder](https://github.com/samdark/sitemap)
+- [RBAC](https://github.com/developeruz/yii2-db-rbac)
 - [Imperavi reactor widget](https://github.com/vova07/yii2-imperavi-widget)
 - [FileAPI widget](https://github.com/vova07/yii2-fileapi-widget)
 - [Taggable behavior](https://github.com/creocoder/yii2-taggable)

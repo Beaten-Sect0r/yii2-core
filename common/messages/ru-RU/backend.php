@@ -72,6 +72,7 @@ return [
     'Other' => 'Прочее',
     'Pages' => 'Страницы',
     'Password' => 'Пароль',
+    'Permissions' => 'Доступы',
     'Prefix' => 'Префикс',
     'Profile' => 'Профиль',
     'Registration' => 'Регистрация',
