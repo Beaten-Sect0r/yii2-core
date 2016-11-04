@@ -6,6 +6,9 @@ use Yii;
 use yii\base\Behavior;
 use yii\base\Controller;
 
+/**
+ * Class LastActionBehavior.
+ */
 class LastActionBehavior extends Behavior
 {
     /**

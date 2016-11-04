@@ -71,9 +71,7 @@ class SignInController extends Controller
 
             return $this->goBack();
         } else {
-            return $this->render('login', [
-                'model' => $model,
-            ]);
+            return $this->render('login', ['model' => $model]);
         }
     }
 
@@ -118,9 +116,7 @@ class SignInController extends Controller
                 }
             }
 
-            return $this->render('signup', [
-                'model' => $model,
-            ]);
+            return $this->render('signup', ['model' => $model]);
         } else {
             Yii::$app->session->setFlash('info', Yii::t('frontend', 'Registration is disabled.'));
         }
@@ -167,9 +163,7 @@ class SignInController extends Controller
             return $this->refresh();
         }
 
-        return $this->render('requestPasswordResetToken', [
-            'model' => $model,
-        ]);
+        return $this->render('requestPasswordResetToken', ['model' => $model]);
     }
 
     /**
@@ -193,8 +187,6 @@ class SignInController extends Controller
             return $this->goHome();
         }
 
-        return $this->render('resetPassword', [
-            'model' => $model,
-        ]);
+        return $this->render('resetPassword', ['model' => $model]);
     }
 }

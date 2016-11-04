@@ -36,24 +36,16 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 
     <?= $form->field($profile, 'lastname')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($profile, 'birthday')->widget(
-        DateTimeWidget::className(),
-        [
-            'phpDatetimeFormat' => 'yyyy-MM-dd\'T\'HH:mm:ssZZZZZ',
-        ]
-    ) ?>
+    <?= $form->field($profile, 'birthday')->widget(DateTimeWidget::className(), ['phpDatetimeFormat' => 'yyyy-MM-dd\'T\'HH:mm:ssZZZZZ']) ?>
 
-    <?= $form->field($profile, 'avatar_path')->widget(
-        Widget::className(),
-        [
-            'settings' => [
-                'url' => ['/site/fileapi-upload'],
-            ],
-            'crop' => true,
-            'cropResizeWidth' => 100,
-            'cropResizeHeight' => 100,
-        ]
-    ) ?>
+    <?= $form->field($profile, 'avatar_path')->widget(Widget::className(), [
+        'settings' => [
+            'url' => ['/site/fileapi-upload'],
+        ],
+        'crop' => true,
+        'cropResizeWidth' => 100,
+        'cropResizeHeight' => 100,
+    ]) ?>
 
     <?= $form->field($profile, 'gender')->dropDownlist(
         [

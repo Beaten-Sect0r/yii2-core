@@ -44,9 +44,7 @@ class KeyStorageItemSearch extends KeyStorageItem
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'pagination' => [
-                'pagesize' => 30,
-            ],
+            'pagination' => ['pagesize' => 30],
         ]);
 
         $this->load($params);

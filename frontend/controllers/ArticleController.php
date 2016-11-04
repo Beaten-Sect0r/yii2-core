@@ -26,9 +26,7 @@ class ArticleController extends Controller
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'pagination' => [
-                'defaultPageSize' => 10,
-            ],
+            'pagination' => ['defaultPageSize' => 10],
         ]);
 
         $dataProvider->sort = [
@@ -88,9 +86,7 @@ class ArticleController extends Controller
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'pagination' => [
-                'defaultPageSize' => 10,
-            ],
+            'pagination' => ['defaultPageSize' => 10],
         ]);
 
         $dataProvider->sort = [
@@ -121,9 +117,7 @@ class ArticleController extends Controller
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'pagination' => [
-                'defaultPageSize' => 10,
-            ],
+            'pagination' => ['defaultPageSize' => 10],
         ]);
 
         $dataProvider->sort = [

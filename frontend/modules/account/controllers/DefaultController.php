@@ -54,9 +54,7 @@ class DefaultController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => Yii::$app->user->id]);
         } else {
-            return $this->render('settings', [
-                'model' => $model,
-            ]);
+            return $this->render('settings', ['model' => $model]);
         }
     }
 
@@ -73,9 +71,7 @@ class DefaultController extends Controller
 
             return $this->refresh();
         } else {
-            return $this->render('password', [
-                'model' => $model,
-            ]);
+            return $this->render('password', ['model' => $model]);
         }
     }
 

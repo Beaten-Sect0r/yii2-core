@@ -58,10 +58,7 @@ class UserForm extends Model
             ['status', 'integer'],
             ['status', 'in', 'range' => array_keys(User::statuses())],
             ['roles', 'each',
-                'rule' => ['in', 'range' => ArrayHelper::getColumn(
-                    Yii::$app->authManager->getRoles(),
-                    'name'
-                )],
+                'rule' => ['in', 'range' => ArrayHelper::getColumn(Yii::$app->authManager->getRoles(), 'name')],
             ],
         ];
     }
@@ -89,10 +86,7 @@ class UserForm extends Model
         $this->email = $model->email;
         $this->status = $model->status;
         $this->model = $model;
-        $this->roles = ArrayHelper::getColumn(
-            Yii::$app->authManager->getRolesByUser($model->getId()),
-            'name'
-        );
+        $this->roles = ArrayHelper::getColumn(Yii::$app->authManager->getRolesByUser($model->getId()), 'name');
 
         return $this->model;
     }

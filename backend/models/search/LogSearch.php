@@ -45,9 +45,7 @@ class LogSearch extends Log
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'pagination' => [
-                'pagesize' => 60,
-            ],
+            'pagination' => ['pagesize' => 60],
         ]);
 
         if (!($this->load($params) && $this->validate())) {
