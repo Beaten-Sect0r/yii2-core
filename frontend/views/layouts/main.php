@@ -55,7 +55,7 @@ AppAsset::register($this);
                 ['label' => Yii::t('frontend', 'Settings'), 'url' => ['/account/default/settings']],
                 [
                     'label' => Yii::t('frontend', 'Backend'),
-                    'url' => getenv('BACKEND_URL'),
+                    'url' => env('BACKEND_URL'),
                     'linkOptions' => ['target' => '_blank'],
                     'visible' => Yii::$app->user->can('administrator'),
                 ],

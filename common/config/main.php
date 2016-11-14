@@ -4,17 +4,17 @@ $config = [
     'name'=>'Yii2 Core',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'extensions' => require(__DIR__ . '/../../vendor/yiisoft/extensions.php'),
-    'timeZone' => getenv('TIMEZONE'),
+    'timeZone' => env('TIMEZONE'),
     'sourceLanguage' => 'en-US',
-    'language' => getenv('LANGUAGE'),
+    'language' => env('LANGUAGE'),
     'bootstrap' => ['log'],
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => getenv('DB_DSN'),
-            'username' => getenv('DB_USERNAME'),
-            'password' => getenv('DB_PASSWORD'),
-            'tablePrefix' => getenv('DB_TABLE_PREFIX'),
+            'dsn' => env('DB_DSN'),
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
+            'tablePrefix' => env('DB_TABLE_PREFIX'),
             'charset' => 'utf8',
             'enableSchemaCache' => YII_ENV_PROD,
         ],
@@ -23,7 +23,7 @@ $config = [
         ],
         'assetManager' => [
             'class' => 'yii\web\AssetManager',
-            'linkAssets' => getenv('LINK_ASSETS'),
+            'linkAssets' => env('LINK_ASSETS'),
             'appendTimestamp' => YII_ENV_DEV,
         ],
         'log' => [
