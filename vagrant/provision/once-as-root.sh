@@ -32,7 +32,6 @@ dpkg-reconfigure --frontend noninteractive tzdata
 info "Prepare root password for MySQL"
 debconf-set-selections <<< "mysql-server-5.6 mysql-server/root_password password \"''\""
 debconf-set-selections <<< "mysql-server-5.6 mysql-server/root_password_again password \"''\""
-echo "Done!"
 
 info "Update OS software"
 apt-get update
@@ -44,25 +43,28 @@ php5enmod mcrypt
 
 info "Configure MySQL"
 sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
-echo "Done!"
 
 info "Configure PHP-FPM"
 sed -i 's/user = www-data/user = vagrant/g' /etc/php5/fpm/pool.d/www.conf
 sed -i 's/group = www-data/group = vagrant/g' /etc/php5/fpm/pool.d/www.conf
 sed -i 's/owner = www-data/owner = vagrant/g' /etc/php5/fpm/pool.d/www.conf
-echo "Done!"
+
+info "Configure PHP error handler"
+php_ini_set() {
+    sed -i 's/error_reporting = .*/error_reporting = E_ALL/g' $1
+    sed -i 's/display_errors = .*/display_errors = On/g' $1
+}
+php_ini_set /etc/php5/fpm/php.ini
+php_ini_set /etc/php5/cli/php.ini
 
 info "Configure NGINX"
 sed -i 's/user www-data/user vagrant/g' /etc/nginx/nginx.conf
-echo "Done!"
 
 info "Enabling site configuration"
 ln -s /app/vagrant/nginx/app.conf /etc/nginx/sites-enabled/app.conf
-echo "Done!"
 
 info "Initailize databases for MySQL"
 mysql -uroot <<< "CREATE DATABASE \`yii2-core\`"
-echo "Done!"
 
 info "Install composer"
 if [ ! -f /usr/local/bin/composer ]; then

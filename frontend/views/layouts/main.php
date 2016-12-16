@@ -69,7 +69,7 @@ AppAsset::register($this);
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => array_merge(NavItem::getMenuItems(), $menuItems),
+        'items' => ArrayHelper::merge(NavItem::getMenuItems(), $menuItems),
     ]);
     NavBar::end() ?>
 
