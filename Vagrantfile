@@ -4,7 +4,8 @@ require 'fileutils'
 domains = {
   frontend: 'yii2-core.dev',
   backend: 'backend.yii2-core.dev',
-  storage: 'storage.yii2-core.dev'
+  storage: 'storage.yii2-core.dev',
+  pma: 'pma.yii2-core.dev',
 }
 
 config = {
@@ -75,5 +76,5 @@ Vagrant.configure(2) do |config|
   config.vm.provision 'shell', path: './vagrant/provision/always-as-root.sh', run: 'always'
 
   # post-install message (vagrant console)
-  config.vm.post_up_message = "Frontend URL: http://#{domains[:frontend]}\nBackend URL: http://#{domains[:backend]}\nStorage URL: http://#{domains[:storage]}"
+  config.vm.post_up_message = "Frontend URL: http://#{domains[:frontend]}\nBackend URL: http://#{domains[:backend]}\nStorage URL: http://#{domains[:storage]}\nphpMyAdmin URL: http://#{domains[:pma]}"
 end

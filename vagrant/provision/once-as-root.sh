@@ -7,9 +7,9 @@ timezone=$(echo "$1")
 #== Bash helpers ==
 
 function info {
-  echo " "
-  echo "--> $1"
-  echo " "
+    echo " "
+    echo "--> $1"
+    echo " "
 }
 
 #== Provision script ==
@@ -42,17 +42,18 @@ apt-get install -y git php5-curl php5-cli php5-intl php5-mcrypt php5-mysqlnd php
 php5enmod mcrypt
 
 info "Configure MySQL"
-sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
+sed -i 's/.*bind-address.*/bind-address = 0.0.0.0/' /etc/mysql/my.cnf
 
 info "Configure PHP-FPM"
-sed -i 's/user = www-data/user = vagrant/g' /etc/php5/fpm/pool.d/www.conf
-sed -i 's/group = www-data/group = vagrant/g' /etc/php5/fpm/pool.d/www.conf
-sed -i 's/owner = www-data/owner = vagrant/g' /etc/php5/fpm/pool.d/www.conf
+fpm_conf=/etc/php5/fpm/pool.d/www.conf
+sed -i 's/user = www-data/user = vagrant/g' $fpm_conf
+sed -i 's/group = www-data/group = vagrant/g' $fpm_conf
+sed -i 's/owner = www-data/owner = vagrant/g' $fpm_conf
 
 info "Configure PHP error handler"
 php_ini_set() {
-    sed -i 's/error_reporting = .*/error_reporting = E_ALL/g' $1
-    sed -i 's/display_errors = .*/display_errors = On/g' $1
+    sed -i 's/error_reporting = .*/error_reporting = E_ALL/' $1
+    sed -i 's/display_errors = .*/display_errors = On/' $1
 }
 php_ini_set /etc/php5/fpm/php.ini
 php_ini_set /etc/php5/cli/php.ini
