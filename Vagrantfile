@@ -5,7 +5,7 @@ domains = {
   frontend: 'yii2-core.dev',
   backend: 'backend.yii2-core.dev',
   storage: 'storage.yii2-core.dev',
-  pma: 'pma.yii2-core.dev',
+  pma: 'pma.yii2-core.dev'
 }
 
 config = {
