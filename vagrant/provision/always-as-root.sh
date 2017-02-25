@@ -11,7 +11,7 @@ function info {
 #== Provision script ==
 
 info "Restart web-stack"
-service php5-fpm restart
+service php7.0-fpm restart
 service nginx restart
 service mysql restart
 

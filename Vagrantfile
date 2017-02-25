@@ -27,7 +27,7 @@ end
 # vagrant configurate
 Vagrant.configure(2) do |config|
   # select the box
-  config.vm.box = 'ubuntu/trusty64'
+  config.vm.box = 'ubuntu/xenial64'
 
   # should we ask about box updates?
   config.vm.box_check_update = options['box_check_update']
@@ -40,7 +40,7 @@ Vagrant.configure(2) do |config|
     # machine name (for VirtualBox UI)
     vb.name = options['machine_name']
   end
-
+    
   # machine name (for vagrant console)
   config.vm.define options['machine_name']
 
@@ -51,7 +51,7 @@ Vagrant.configure(2) do |config|
   config.vm.network 'private_network', ip: options['ip']
 
   # sync: folder 'yii2-core' (host machine) -> folder '/app' (guest machine)
-  config.vm.synced_folder './', '/app', owner: 'vagrant', group: 'vagrant'
+  config.vm.synced_folder './', '/app'
 
   # disable folder '/vagrant' (guest machine)
   config.vm.synced_folder '.', '/vagrant', disabled: true
@@ -64,11 +64,12 @@ Vagrant.configure(2) do |config|
   config.hostmanager.include_offline = true
   config.hostmanager.aliases = domains.values
 
-  # fix "stdin: is not a tty"
-  config.vm.provision "fix-no-tty", type: "shell" do |s|
-    s.privileged = false
-    s.inline = "sudo sed -i '/tty/!s/mesg n/tty -s \\&\\& mesg n/' /root/.profile"
-  end
+  # avoid tty errors in ubuntu
+  # https://github.com/mitchellh/vagrant/issues/1673
+  config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+
+  # add default user
+  config.vm.provision "shell", inline: "echo 'ubuntu:ubuntu' | sudo chpasswd"
 
   # provisioners
   config.vm.provision 'shell', path: './vagrant/provision/once-as-root.sh', args: [options['timezone']]

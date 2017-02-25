@@ -44,8 +44,8 @@ if [ ! -f .env ]; then
 fi
 php yii app/setup --interactive=0
 
-info "Create bash-alias 'app' for vagrant user"
-echo 'alias app="cd /app"' | tee /home/vagrant/.bash_aliases
+info "Create bash-alias 'app' for ubuntu user"
+echo 'alias app="cd /app"' | tee /home/ubuntu/.bash_aliases
 
 info "Enabling colorized prompt for guest console"
-sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/' /home/vagrant/.bashrc
+sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/' /home/ubuntu/.bashrc
