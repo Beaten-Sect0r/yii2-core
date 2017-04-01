@@ -53,12 +53,12 @@
     "config": {
         "process-timeout": 1800,
         "optimize-autoloader": true,
-        "preferred-install": "dist"
-    },
-    "extra": {
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
+        "preferred-install": "dist",
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
         }
     }
 }
