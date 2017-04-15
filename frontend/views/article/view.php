@@ -37,12 +37,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php endif ?>
 
                 <hr/>
-                <!--noindex-->
-                    <?= Comments::widget([
-                        'shortname' => env('SHORT_NAME'),
-                        'identifier' => Html::encode($model->slug),
-                    ]) ?>
-                <!--/noindex-->
             </div>
 
             <div class="col-md-3">

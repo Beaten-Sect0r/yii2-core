@@ -72,10 +72,6 @@ if (YII_ENV_PROD) {
         // year-month-day hour:minute:second
         'time' => '0000-00-00 00:00:00', // время окончания работ
     ];
-    // Compressed assets
-    /*$config['components']['assetManager'] = [
-       'bundles' => require(__DIR__ . '/assets/_bundles.php'),
-    ];*/
 }
 
 return $config;

@@ -24,7 +24,7 @@ It covers typical use cases for a new project and will help you not to waste you
 - Sign in, sign up, profile, email activation etc
 - User management
 - [RBAC](https://github.com/developeruz/yii2-db-rbac) with predefined `guest`, `user`, `manager` and `administrator` roles
-- Content management components: articles, categories, tags, static pages, editable menu
+- Content management components: articles, categories, tags, comments, static pages, editable menu
 - Useful behaviors (GlobalAccessBehavior, LastActionBehavior)
 - Log web interface
 - Cache web controller
@@ -37,7 +37,6 @@ It covers typical use cases for a new project and will help you not to waste you
 - [FileAPI widget](https://github.com/vova07/yii2-fileapi-widget)
 - [Taggable behavior](https://github.com/creocoder/yii2-taggable)
 - [Selectize widget](https://github.com/2amigos/yii2-disqus-widget)
-- [DISQUS comments widget](https://github.com/2amigos/yii2-disqus-widget)
 - [ElFinder widget](https://github.com/MihailDev/yii2-elfinder)
 - [Datetimepicker widget](https://github.com/trntv/yii2-datetime-widget)
 - [Notification wrapper](https://github.com/loveorigami/yii2-notification-wrapper)

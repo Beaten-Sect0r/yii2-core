@@ -28,7 +28,6 @@
         "vova07/yii2-fileapi-widget": "*",
         "creocoder/yii2-taggable": "*",
         "2amigos/yii2-selectize-widget": "*",
-        "2amigos/yii2-disqus-widget": "*",
         "mihaildev/yii2-elfinder": "*",
         "trntv/yii2-datetime-widget": "*",
         "loveorigami/yii2-notification-wrapper": "*",
@@ -42,8 +41,7 @@
     },
     "require-dev": {
         "yiisoft/yii2-debug": "*",
-        "yiisoft/yii2-gii": "*",
-        "samdark/yii2-webshell": "*"
+        "yiisoft/yii2-gii": "*"
     },
     "scripts": {
         "post-update-cmd": [

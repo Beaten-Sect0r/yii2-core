@@ -57,12 +57,6 @@ use backend\widgets\Menu;
                             'icon' => '<i class="fa fa-angle-double-right"></i>',
                             'visible' => YII_ENV_DEV,
                         ],
-                        [
-                            'label' => 'Web shell',
-                            'url' => ['/webshell'],
-                            'icon' => '<i class="fa fa-angle-double-right"></i>',
-                            'visible' => Yii::$app->user->can('administrator'),
-                        ],
                         ['label' => Yii::t('backend', 'File manager'), 'url' => ['/file-manager/index'], 'icon' => '<i class="fa fa-angle-double-right"></i>'],
                         [
                             'label' => Yii::t('backend', 'DB manager'),
