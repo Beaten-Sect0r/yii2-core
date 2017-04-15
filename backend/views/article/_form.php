@@ -4,7 +4,7 @@ use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Html;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
-use bs\Flatpickr\Widget;
+use bs\Flatpickr\Widget as Flatpickr;
 use dosamigos\selectize\SelectizeTextInput;
 use vova07\imperavi\Widget;
 
@@ -82,7 +82,7 @@ use vova07\imperavi\Widget;
         ), ['prompt' => '']
     ) ?>
 
-    <?= $form->field($model, 'published_at')->widget(Widget::className(), [
+    <?= $form->field($model, 'published_at')->widget(Flatpickr::className(), [
         'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
         'options' => [
             'class' => 'form-control',
@@ -90,8 +90,6 @@ use vova07\imperavi\Widget;
         'clientOptions' => [
             'altFormat' => 'F j, Y H:i',
             'altInput' => true,
-            'allowInput' => true,
-            'defaultDate' => date(DATE_ISO8601),
             'enableTime' => true,
             'time_24hr' => true,
         ],

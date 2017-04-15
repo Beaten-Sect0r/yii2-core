@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use common\models\UserProfile;
-use bs\Flatpickr\Widget;
+use bs\Flatpickr\Widget as Flatpickr;
 use vova07\fileapi\Widget;
 
 /* @var $this yii\web\View */
@@ -34,14 +34,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'clientOptions' => [
             'altFormat' => 'F j, Y H:i',
             'altInput' => true,
-            'allowInput' => true,
-            'defaultDate' => date(DATE_ISO8601),
             'enableTime' => true,
             'time_24hr' => true,
         ],
     ]) ?>
 
-    <?= $form->field($model, 'avatar_path')->widget(Widget::className(), [
+    <?= $form->field($model, 'avatar_path')->widget(Flatpickr::className(), [
         'settings' => [
             'url' => ['/site/fileapi-upload'],
         ],

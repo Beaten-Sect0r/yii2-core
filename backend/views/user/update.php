@@ -4,7 +4,7 @@ use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Html;
 use common\models\User;
 use common\models\UserProfile;
-use bs\Flatpickr\Widget;
+use bs\Flatpickr\Widget as Flatpickr;
 use vova07\fileapi\Widget;
 
 /* @var $this yii\web\View */
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 
     <?= $form->field($profile, 'lastname')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'birthday')->widget(Widget::className(), [
+    <?= $form->field($profile, 'birthday')->widget(Flatpickr::className(), [
         'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
         'options' => [
             'class' => 'form-control',
@@ -44,8 +44,6 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
         'clientOptions' => [
             'altFormat' => 'F j, Y H:i',
             'altInput' => true,
-            'allowInput' => true,
-            'defaultDate' => date(DATE_ISO8601),
             'enableTime' => true,
             'time_24hr' => true,
         ],

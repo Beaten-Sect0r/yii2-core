@@ -81,7 +81,7 @@ class Article extends ActiveRecord
             [['preview', 'body'], 'string'],
             ['published_at', 'default',
                 'value' => function () {
-                    return date(DATE_ISO8601);
+                    return date(DATE_ATOM);
                 }
             ],
             ['published_at', 'filter', 'filter' => 'strtotime'],
