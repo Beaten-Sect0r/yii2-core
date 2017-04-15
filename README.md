@@ -29,6 +29,7 @@ It covers typical use cases for a new project and will help you not to waste you
 - Log web interface
 - Cache web controller
 - [DB manager](https://github.com/Beaten-Sect0r/yii2-db-manager)
+- [Flatpickr widget](https://github.com/Beaten-Sect0r/yii2-flatpickr)
 - Maintenance mode component
 - [Key storage component](https://github.com/trntv/yii2-starter-kit/tree/master/common/components/keyStorage)
 - [dotenv support](https://github.com/vlucas/phpdotenv)
@@ -36,9 +37,8 @@ It covers typical use cases for a new project and will help you not to waste you
 - [Imperavi reactor widget](https://github.com/vova07/yii2-imperavi-widget)
 - [FileAPI widget](https://github.com/vova07/yii2-fileapi-widget)
 - [Taggable behavior](https://github.com/creocoder/yii2-taggable)
-- [Selectize widget](https://github.com/2amigos/yii2-disqus-widget)
+- [Selectize widget](https://github.com/2amigos/yii2-selectize-widget)
 - [ElFinder widget](https://github.com/MihailDev/yii2-elfinder)
-- [Datetimepicker widget](https://github.com/trntv/yii2-datetime-widget)
 - [Notification wrapper](https://github.com/loveorigami/yii2-notification-wrapper)
 - [Open Sans fonts](https://www.google.com/fonts/specimen/Open+Sans)
 - [JavaScript syntax highlighter](https://github.com/isagalaev/highlight.js)

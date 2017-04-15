@@ -4,8 +4,8 @@ use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Html;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
+use bs\Flatpickr\Widget;
 use dosamigos\selectize\SelectizeTextInput;
-use trntv\yii\datetime\DateTimeWidget;
 use vova07\imperavi\Widget;
 
 /* @var $this yii\web\View */
@@ -82,7 +82,20 @@ use vova07\imperavi\Widget;
         ), ['prompt' => '']
     ) ?>
 
-    <?= $form->field($model, 'published_at')->widget(DateTimeWidget::className(), ['phpDatetimeFormat' => 'yyyy-MM-dd\'T\'HH:mm:ssZZZZZ']) ?>
+    <?= $form->field($model, 'published_at')->widget(Widget::className(), [
+        'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
+        'options' => [
+            'class' => 'form-control',
+        ],
+        'clientOptions' => [
+            'altFormat' => 'F j, Y H:i',
+            'altInput' => true,
+            'allowInput' => true,
+            'defaultDate' => date(DATE_ISO8601),
+            'enableTime' => true,
+            'time_24hr' => true,
+        ],
+    ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('backend', 'Create') : Yii::t('backend', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

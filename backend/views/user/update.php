@@ -4,7 +4,7 @@ use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Html;
 use common\models\User;
 use common\models\UserProfile;
-use trntv\yii\datetime\DateTimeWidget;
+use bs\Flatpickr\Widget;
 use vova07\fileapi\Widget;
 
 /* @var $this yii\web\View */
@@ -36,7 +36,20 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 
     <?= $form->field($profile, 'lastname')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($profile, 'birthday')->widget(DateTimeWidget::className(), ['phpDatetimeFormat' => 'yyyy-MM-dd\'T\'HH:mm:ssZZZZZ']) ?>
+    <?= $form->field($model, 'birthday')->widget(Widget::className(), [
+        'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
+        'options' => [
+            'class' => 'form-control',
+        ],
+        'clientOptions' => [
+            'altFormat' => 'F j, Y H:i',
+            'altInput' => true,
+            'allowInput' => true,
+            'defaultDate' => date(DATE_ISO8601),
+            'enableTime' => true,
+            'time_24hr' => true,
+        ],
+    ]) ?>
 
     <?= $form->field($profile, 'avatar_path')->widget(Widget::className(), [
         'settings' => [
