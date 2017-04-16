@@ -88,8 +88,8 @@ use vova07\imperavi\Widget;
             'class' => 'form-control',
         ],
         'clientOptions' => [
-            'altFormat' => 'F j, Y H:i',
-            'altInput' => true,
+            'allowInput' => true,
+            'defaultDate' => $model->published_at ? date(DATE_ATOM, $model->published_at) : null,
             'enableTime' => true,
             'time_24hr' => true,
         ],

@@ -5,7 +5,7 @@ use yii\bootstrap\Html;
 use common\models\User;
 use common\models\UserProfile;
 use bs\Flatpickr\Widget as Flatpickr;
-use vova07\fileapi\Widget;
+use vova07\fileapi\Widget as FileApi;
 
 /* @var $this yii\web\View */
 /* @var $profile common\models\UserProfile */
@@ -42,14 +42,12 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
             'class' => 'form-control',
         ],
         'clientOptions' => [
-            'altFormat' => 'F j, Y H:i',
-            'altInput' => true,
-            'enableTime' => true,
-            'time_24hr' => true,
+            'allowInput' => true,
+            'defaultDate' => $profile->birthday ? date(DATE_ATOM, $profile->birthday) : null,
         ],
     ]) ?>
 
-    <?= $form->field($profile, 'avatar_path')->widget(Widget::className(), [
+    <?= $form->field($profile, 'avatar_path')->widget(FileApi::className(), [
         'settings' => [
             'url' => ['/site/fileapi-upload'],
         ],
