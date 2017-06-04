@@ -25,9 +25,9 @@
         "beaten-sect0r/yii2-flatpickr": "*",
         "samdark/sitemap": "*",
         "developeruz/yii2-db-rbac": "*",
-        "vova07/yii2-imperavi-widget": "*",
         "vova07/yii2-fileapi-widget": "*",
         "creocoder/yii2-taggable": "*",
+        "2amigos/yii2-tinymce-widget": "*",
         "2amigos/yii2-selectize-widget": "*",
         "mihaildev/yii2-elfinder": "*",
         "loveorigami/yii2-notification-wrapper": "*",
@@ -45,7 +45,7 @@
     },
     "scripts": {
         "post-update-cmd": [
-            "php -r \"file_exists('.env') || copy('.env.dist', '.env');\""
+            "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ]
     },
     "config": {

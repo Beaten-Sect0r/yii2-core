@@ -6,7 +6,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use bs\Flatpickr\Widget as Flatpickr;
 use dosamigos\selectize\SelectizeTextInput;
-use vova07\imperavi\Widget;
+use dosamigos\tinymce\TinyMce;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Article */
@@ -25,39 +25,29 @@ use vova07\imperavi\Widget;
 
     <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'preview')->widget(Widget::className(), [
-        'settings' => [
-            'minHeight' => 200,
+    <?= $form->field($model, 'preview')->widget(TinyMce::className(), [
+        'language' => strtolower(substr(Yii::$app->language, 0, 2)),
+        'clientOptions' => [
+            'height'=> 150,
             'plugins' => [
-                'filemanager',
-                'fullscreen',
-                'fontcolor',
-                'imagemanager',
-                'table',
-                'video',
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table contextmenu paste code',
             ],
-            'imageManagerJson' => Url::to(['/site/images-get']),
-            'fileManagerJson' => Url::to(['/site/files-get']),
-            'imageUpload' => Url::to(['/site/image-upload']),
-            'fileUpload' => Url::to(['/site/file-upload']),
+            'toolbar' => 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
         ],
     ]) ?>
 
-    <?= $form->field($model, 'body')->widget(Widget::className(), [
-        'settings' => [
-            'minHeight' => 200,
+    <?= $form->field($model, 'body')->widget(TinyMce::className(), [
+        'language' => strtolower(substr(Yii::$app->language, 0, 2)),
+        'clientOptions' => [
+            'height'=> 350,
             'plugins' => [
-                'filemanager',
-                'fullscreen',
-                'fontcolor',
-                'imagemanager',
-                'table',
-                'video',
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table contextmenu paste code',
             ],
-            'imageManagerJson' => Url::to(['/site/images-get']),
-            'fileManagerJson' => Url::to(['/site/files-get']),
-            'imageUpload' => Url::to(['/site/image-upload']),
-            'fileUpload' => Url::to(['/site/file-upload']),
+            'toolbar' => 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
         ],
     ]) ?>
 
@@ -84,6 +74,7 @@ use vova07\imperavi\Widget;
 
     <?= $form->field($model, 'published_at')->widget(Flatpickr::className(), [
         'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
+        'groupBtnShow' => true,
         'options' => [
             'class' => 'form-control',
         ],

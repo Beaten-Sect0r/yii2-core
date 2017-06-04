@@ -61,7 +61,7 @@ Required PHP extensions:
 
 ### Setup application
 
-1. Copy `.env.dist` to `.env` in the project root.
+1. Copy `.env.example` to `.env` in the project root.
 
 2. Adjust settings in `.env` file
 	- Set debug mode and your current environment

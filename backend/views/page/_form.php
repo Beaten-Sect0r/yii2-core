@@ -3,7 +3,7 @@
 use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Html;
 use yii\helpers\Url;
-use vova07\imperavi\Widget;
+use dosamigos\tinymce\TinyMce;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Page */
@@ -22,21 +22,16 @@ use vova07\imperavi\Widget;
 
     <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'body')->widget(Widget::className(), [
-        'settings' => [
-            'minHeight' => 200,
+    <?= $form->field($model, 'body')->widget(TinyMce::className(), [
+        'language' => strtolower(substr(Yii::$app->language, 0, 2)),
+        'clientOptions' => [
+            'height'=> 350,
             'plugins' => [
-                'filemanager',
-                'fullscreen',
-                'fontcolor',
-                'imagemanager',
-                'table',
-                'video',
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table contextmenu paste code',
             ],
-            'imageManagerJson' => Url::to(['/site/images-get']),
-            'fileManagerJson' => Url::to(['/site/files-get']),
-            'imageUpload' => Url::to(['/site/image-upload']),
-            'fileUpload' => Url::to(['/site/file-upload']),
+            'toolbar' => 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
         ],
     ]) ?>
 

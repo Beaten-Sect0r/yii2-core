@@ -8,8 +8,6 @@ use yii\web\Controller;
 use common\components\keyStorage\FormModel;
 use common\models\LoginForm;
 use vova07\fileapi\actions\UploadAction as FileAPIUpload;
-use vova07\imperavi\actions\GetAction;
-use vova07\imperavi\actions\UploadAction;
 
 /**
  * Class SiteController.
@@ -43,29 +41,6 @@ class SiteController extends Controller
             'fileapi-upload' => [
                 'class' => FileAPIUpload::className(),
                 'path' => '@storage/tmp',
-            ],
-            'images-get' => [
-                'class' => GetAction::className(),
-                'url' => Yii::getAlias('@storageUrl/images'),
-                'path' => '@storage/images',
-                'type' => GetAction::TYPE_IMAGES,
-            ],
-            'files-get' => [
-                'class' => GetAction::className(),
-                'url' => Yii::getAlias('@storageUrl/files'),
-                'path' => '@storage/files',
-                'type' => GetAction::TYPE_FILES,
-            ],
-            'image-upload' => [
-                'class' => UploadAction::className(),
-                'url' => Yii::getAlias('@storageUrl/images/' . date('m.y')),
-                'path' => '@storage/images/' . date('m.y'),
-            ],
-            'file-upload' => [
-                'class' => UploadAction::className(),
-                'url' => Yii::getAlias('@storageUrl/files/' . date('m.y')),
-                'path' => '@storage/files/' . date('m.y'),
-                'uploadOnlyImage' => false,
             ],
         ];
     }

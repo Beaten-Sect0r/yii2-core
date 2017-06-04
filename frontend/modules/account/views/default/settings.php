@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $form->field($model, 'birthday')->widget(Flatpickr::className(), [
         'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
+        'groupBtnShow' => true,
         'options' => [
             'class' => 'form-control',
         ],

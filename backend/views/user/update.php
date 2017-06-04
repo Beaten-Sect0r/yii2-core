@@ -38,6 +38,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 
     <?= $form->field($profile, 'birthday')->widget(Flatpickr::className(), [
         'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
+        'groupBtnShow' => true,
         'options' => [
             'class' => 'form-control',
         ],
