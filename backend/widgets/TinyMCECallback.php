@@ -2,6 +2,7 @@
 
 namespace backend\widgets;
 
+use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use yii\helpers\Url;
@@ -19,7 +20,7 @@ class TinyMCECallback
     public static function getFilePickerCallback($url, $popupSettings = [])
     {
         $default = [
-            'title' => 'File manager',
+            'title' => Yii::t('backend', 'File manager'),
             'width' => 900,
             'height' => 450,
             'resizable' => true,
