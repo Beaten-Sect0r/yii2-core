@@ -10,4 +10,9 @@ class FileManagerController extends Controller
     {
         return $this->render('index');
     }
+
+    public function actionFrame()
+    {
+        return $this->renderAjax('frame');
+    }
 }

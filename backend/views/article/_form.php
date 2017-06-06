@@ -4,6 +4,7 @@ use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Html;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
+use backend\widgets\TinyMCECallback;
 use bs\Flatpickr\Widget as Flatpickr;
 use dosamigos\selectize\SelectizeTextInput;
 use dosamigos\tinymce\TinyMce;
@@ -30,11 +31,12 @@ use dosamigos\tinymce\TinyMce;
         'clientOptions' => [
             'height'=> 150,
             'plugins' => [
-                'advlist autolink lists link image charmap print preview anchor',
+                'advlist autolink lists link image charmap print preview anchor pagebreak',
                 'searchreplace visualblocks code fullscreen',
-                'insertdatetime media table contextmenu paste code',
+                'insertdatetime media table contextmenu paste code textcolor colorpicker',
             ],
-            'toolbar' => 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            'toolbar' => 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | forecolor backcolor',
+            'file_picker_callback' => TinyMCECallback::getFilePickerCallback(['file-manager/frame']),
         ],
     ]) ?>
 
@@ -43,11 +45,12 @@ use dosamigos\tinymce\TinyMce;
         'clientOptions' => [
             'height'=> 350,
             'plugins' => [
-                'advlist autolink lists link image charmap print preview anchor',
+                'advlist autolink lists link image charmap print preview anchor pagebreak',
                 'searchreplace visualblocks code fullscreen',
-                'insertdatetime media table contextmenu paste code',
+                'insertdatetime media table contextmenu paste code textcolor colorpicker',
             ],
-            'toolbar' => 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            'toolbar' => 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media | forecolor backcolor',
+            'file_picker_callback' => TinyMCECallback::getFilePickerCallback(['file-manager/frame']),
         ],
     ]) ?>
 
