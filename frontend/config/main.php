@@ -64,13 +64,11 @@ if (YII_ENV_PROD) {
     $config['bootstrap'] = ['maintenance'];
     $config['components']['maintenance'] = [
         'class' => 'common\components\maintenance\Maintenance',
-        'enabled' => function ($app) {
-            return $app->keyStorage->get('frontend.maintenance');
-        },
+        'enabled' => env('MAINTENANCE_MODE'),
         'route' => 'maintenance/index',
-        'message' => 'Извините, на сайте ведутся технические работы.',
+        'message' => env('MAINTENANCE_MODE_MESSAGE'),
         // year-month-day hour:minute:second
-        'time' => '0000-00-00 00:00:00', // время окончания работ
+        'time' => env('MAINTENANCE_MODE_TIME'), // время окончания работ
     ];
 }
 

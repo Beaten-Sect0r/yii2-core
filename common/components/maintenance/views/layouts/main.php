@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use common\components\maintenance\MaintenanceAsset;
+use common\components\maintenance\assets\MaintenanceAsset;
 
 MaintenanceAsset::register($this);
 

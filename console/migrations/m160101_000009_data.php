@@ -49,10 +49,6 @@ class m160101_000009_data extends Migration
             'value' => 1,
         ]);
         $this->insert('{{%key_storage_item}}', [
-            'key' => 'frontend.maintenance',
-            'value' => 0,
-        ]);
-        $this->insert('{{%key_storage_item}}', [
             'key' => 'backend.theme-skin',
             'value' => 'skin-blue',
         ]);
@@ -89,7 +85,6 @@ class m160101_000009_data extends Migration
         $this->delete('{{%key_storage_item}}', [
             'key' => 'frontend.registration',
             'key' => 'frontend.email-confirm',
-            'key' => 'frontend.maintenance',
         ]);
 
         $this->delete('{{%page}}', [

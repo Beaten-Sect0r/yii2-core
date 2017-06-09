@@ -93,14 +93,6 @@ class SiteController extends Controller
                         true => Yii::t('backend', 'Enabled'),
                     ],
                 ],
-                'frontend.maintenance' => [
-                    'label' => Yii::t('backend', 'Frontend maintenance mode'),
-                    'type' => FormModel::TYPE_DROPDOWN,
-                    'items' => [
-                        false => Yii::t('backend', 'Disabled'),
-                        true => Yii::t('backend', 'Enabled'),
-                    ],
-                ],
                 'backend.theme-skin' => [
                     'label' => Yii::t('backend', 'Backend theme'),
                     'type' => FormModel::TYPE_DROPDOWN,
