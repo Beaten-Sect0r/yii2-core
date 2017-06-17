@@ -13,6 +13,7 @@ class MaintenanceController extends Controller
     public function init()
     {
         $this->layout = Yii::$app->maintenance->layoutPath;
+
         parent::init();
     }
 

@@ -5,7 +5,7 @@ use yii\bootstrap\Html;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use backend\widgets\TinyMCECallback;
-use bs\Flatpickr\Widget as Flatpickr;
+use bs\Flatpickr\FlatpickrWidget;
 use dosamigos\selectize\SelectizeTextInput;
 use dosamigos\tinymce\TinyMce;
 
@@ -75,8 +75,16 @@ use dosamigos\tinymce\TinyMce;
         ), ['prompt' => '']
     ) ?>
 
-    <?= $form->field($model, 'published_at')->widget(Flatpickr::className(), [
+    <?= $form->field($model, 'published_at')->widget(FlatpickrWidget::className(), [
         'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
+        'plugins' => [
+             'confirmDate' => [
+                   'confirmIcon'=> "<i class='fa fa-check'></i>",
+                   'confirmText' => 'OK',
+                   'showAlways' => false,
+                   'theme' => 'light',
+             ],
+        ],
         'groupBtnShow' => true,
         'options' => [
             'class' => 'form-control',

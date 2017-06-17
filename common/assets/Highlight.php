@@ -20,8 +20,8 @@ class Highlight extends AssetBundle
 
     public function registerAssetFiles($view)
     {
-        parent::registerAssetFiles($view);
-
         $view->registerJs('hljs.initHighlightingOnLoad();', View::POS_END);
+
+        parent::registerAssetFiles($view);
     }
 }

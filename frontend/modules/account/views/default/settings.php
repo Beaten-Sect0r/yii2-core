@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use common\models\UserProfile;
-use bs\Flatpickr\Widget as Flatpickr;
+use bs\Flatpickr\FlatpickrWidget;
 use vova07\fileapi\Widget as FileApi;
 
 /* @var $this yii\web\View */
@@ -26,8 +26,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $form->field($model, 'lastname')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'birthday')->widget(Flatpickr::className(), [
+    <?= $form->field($model, 'birthday')->widget(FlatpickrWidget::className(), [
         'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
+        'plugins' => [
+             'confirmDate' => [
+                   'confirmIcon'=> "<i class='glyphicon glyphicon-ok'></i>",
+                   'confirmText' => 'OK',
+                   'showAlways' => false,
+                   'theme' => 'light',
+             ],
+        ],
         'groupBtnShow' => true,
         'options' => [
             'class' => 'form-control',

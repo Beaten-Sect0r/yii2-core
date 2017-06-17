@@ -37,6 +37,7 @@ class Menu extends BaseMenu
     public function init()
     {
         Html::addCssClass($this->options, 'sidebar-menu');
+
         parent::init();
     }
 

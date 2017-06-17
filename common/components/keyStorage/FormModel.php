@@ -71,6 +71,7 @@ class FormModel extends Model
         foreach ($values as $k => $v) {
             $this->setAttribute($k, $v);
         }
+
         parent::init();
     }
 

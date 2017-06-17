@@ -39,6 +39,7 @@ class ResetPasswordForm extends Model
         if (!$this->user) {
             throw new InvalidParamException(Yii::t('frontend', 'Wrong password reset token.'));
         }
+
         parent::__construct($config);
     }
 

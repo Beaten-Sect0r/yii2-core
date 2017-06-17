@@ -4,7 +4,7 @@ use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Html;
 use common\models\User;
 use common\models\UserProfile;
-use bs\Flatpickr\Widget as Flatpickr;
+use bs\Flatpickr\FlatpickrWidget;
 use vova07\fileapi\Widget as FileApi;
 
 /* @var $this yii\web\View */
@@ -36,8 +36,16 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 
     <?= $form->field($profile, 'lastname')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($profile, 'birthday')->widget(Flatpickr::className(), [
+    <?= $form->field($profile, 'birthday')->widget(FlatpickrWidget::className(), [
         'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
+        'plugins' => [
+             'confirmDate' => [
+                   'confirmIcon'=> "<i class='fa fa-check'></i>",
+                   'confirmText' => 'OK',
+                   'showAlways' => false,
+                   'theme' => 'light',
+             ],
+        ],
         'groupBtnShow' => true,
         'options' => [
             'class' => 'form-control',

@@ -14,10 +14,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
-        "ext-intl": "*",
-        "ext-mbstring": "*",
-        "ext-mcrypt": "*",
-        "yiisoft/yii2": "~2.0.6",
+        "yiisoft/yii2": "~2.0.12",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "vlucas/phpdotenv": "*",
