@@ -38,14 +38,6 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 
     <?= $form->field($profile, 'birthday')->widget(FlatpickrWidget::className(), [
         'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
-        'plugins' => [
-             'confirmDate' => [
-                   'confirmIcon'=> "<i class='fa fa-check'></i>",
-                   'confirmText' => 'OK',
-                   'showAlways' => false,
-                   'theme' => 'light',
-             ],
-        ],
         'groupBtnShow' => true,
         'options' => [
             'class' => 'form-control',

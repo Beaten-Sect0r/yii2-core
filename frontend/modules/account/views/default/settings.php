@@ -28,14 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $form->field($model, 'birthday')->widget(FlatpickrWidget::className(), [
         'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
-        'plugins' => [
-             'confirmDate' => [
-                   'confirmIcon'=> "<i class='glyphicon glyphicon-ok'></i>",
-                   'confirmText' => 'OK',
-                   'showAlways' => false,
-                   'theme' => 'light',
-             ],
-        ],
         'groupBtnShow' => true,
         'options' => [
             'class' => 'form-control',
