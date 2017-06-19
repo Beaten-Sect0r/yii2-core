@@ -47,13 +47,12 @@
     },
     "config": {
         "process-timeout": 1800,
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "fxp-asset": {
-            "installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
-            }
+        "optimize-autoloader": true
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
-    }
+    ]
 }

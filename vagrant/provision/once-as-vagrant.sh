@@ -17,9 +17,6 @@ function info {
 info "Configure composer"
 composer config --global github-oauth.github.com ${github_token}
 
-info "Install plugins for composer"
-composer global require fxp/composer-asset-plugin --no-progress --prefer-dist
-
 info "Changing working directory"
 cd /app
 

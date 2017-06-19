@@ -14,13 +14,16 @@
 
 ## Before you begin
 
-1. If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
-at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
+If you do not have [Composer](http://getcomposer.org), you may install it by following the instructions at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
-2. Install composer-asset-plugin needed for yii assets management
+It uses [asset-packagist](https://asset-packagist.org) for managing bower and npm package dependencies through Composer. Also you can use [asset-plugin](https://packagist.org/packages/fxp/composer-asset-plugin), as in earlier versions, but it works slowly.
+
+### Get source code via Composer
+
+You can install this application template with `composer` using the following command:
 
 ```bash
-composer global require fxp/composer-asset-plugin
+composer create-project --prefer-dist --stability=dev beaten-sect0r/yii2-core
 ```
 
 ### Get source code
@@ -41,23 +44,11 @@ git clone https://github.com/Beaten-Sect0r/yii2-core.git
 composer install --prefer-dist
 ```
 
-### Get source code via Composer
-
-You can install this application template with `composer` using the following command:
-
-```bash
-composer create-project --prefer-dist --stability=dev beaten-sect0r/yii2-core
-```
-
 ## Manual installation
 
 ### Requirements
 
-The minimum requirement by this application template that your Web server supports PHP 5.5.0.
-Required PHP extensions:
-- intl
-- gd
-- mcrypt
+The minimum requirement by this project template is that your Web server supports PHP 5.4.0.
 
 ### Setup application
 

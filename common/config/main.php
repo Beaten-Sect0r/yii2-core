@@ -8,6 +8,10 @@ $config = [
     'sourceLanguage' => 'en-US',
     'language' => env('LANGUAGE'),
     'bootstrap' => ['log'],
+    'aliases' => [
+        '@bower' => '@vendor/bower-asset',
+        '@npm'   => '@vendor/npm-asset',
+    ],
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
