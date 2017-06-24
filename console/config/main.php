@@ -12,6 +12,13 @@ return [
     'bootstrap' => ['gii'],
     'modules' => [
         'gii' => 'yii\gii\Module',
+        'db-manager' => [
+            'class' => 'bs\dbManager\Module',
+            // path to directory for the dumps
+            'path' => '@root/backups',
+            // list of registerd db-components
+            'dbList' => ['db'],
+        ],
     ],
     'params' => $params,
 ];
