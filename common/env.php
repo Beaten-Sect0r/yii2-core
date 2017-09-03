@@ -5,7 +5,7 @@ use Dotenv\Dotenv;
 /**
  * Require shortcuts
  */
-require_once(__DIR__ . '/shortcuts.php');
+require_once __DIR__ . '/shortcuts.php';
 
 /**
  * Load application environment from .env file

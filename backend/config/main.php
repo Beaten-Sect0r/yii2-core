@@ -1,8 +1,8 @@
 <?php
 
 $params = array_merge(
-    require(__DIR__ . '/../../common/config/params.php'),
-    require(__DIR__ . '/params.php')
+    require __DIR__ . '/../../common/config/params.php',
+    require __DIR__ . '/params.php'
 );
 
 $config = [
@@ -54,8 +54,8 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'urlManager' => require(__DIR__ . '/_urlManager.php'),
-        'frontendCache' => require(Yii::getAlias('@frontend/config/_cache.php')),
+        'urlManager' => require __DIR__ . '/_urlManager.php',
+        'frontendCache' => require Yii::getAlias('@frontend/config/_cache.php'),
     ],
     'modules' => [
         'db-manager' => [

@@ -25,15 +25,15 @@ It covers typical use cases for a new project and will help you not to waste you
 - Translations: English, Russian
 - Sign in, sign up, profile, email activation etc
 - User management
-- [RBAC](https://github.com/developeruz/yii2-db-rbac) with predefined `guest`, `user`, `manager` and `administrator` roles
 - Content management components: articles, categories, tags, comments, static pages, editable menu
+- Maintenance mode component
+- Key storage
 - Useful behaviors (GlobalAccessBehavior, LastActionBehavior)
 - Log web interface
 - Cache web controller
 - [DB manager](https://github.com/Beaten-Sect0r/yii2-db-manager)
 - [Flatpickr widget](https://github.com/Beaten-Sect0r/yii2-flatpickr)
-- Maintenance mode component
-- [Key storage component](https://github.com/trntv/yii2-starter-kit/tree/master/common/components/keyStorage)
+- [RBAC](https://github.com/developeruz/yii2-db-rbac) with predefined `guest`, `user`, `manager` and `administrator` roles
 - [dotenv support](https://github.com/vlucas/phpdotenv)
 - [Sitemap and sitemap index builder](https://github.com/samdark/sitemap)
 - [FileAPI widget](https://github.com/vova07/yii2-fileapi-widget)
