@@ -3,7 +3,7 @@
 $config = [
     'name'=>'Yii2 Core',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
-    'extensions' => require(__DIR__ . '/../../vendor/yiisoft/extensions.php'),
+    'extensions' => require __DIR__ . '/../../vendor/yiisoft/extensions.php',
     'timeZone' => env('TIMEZONE'),
     'sourceLanguage' => 'en-US',
     'language' => env('LANGUAGE'),

@@ -38,7 +38,8 @@
     },
     "require-dev": {
         "yiisoft/yii2-debug": "*",
-        "yiisoft/yii2-gii": "*"
+        "yiisoft/yii2-gii": "*",
+        "friendsofphp/php-cs-fixer": "*"
     },
     "scripts": {
         "post-update-cmd": [
@@ -47,6 +48,7 @@
     },
     "config": {
         "process-timeout": 1800,
+        "preferred-install": "dist",
         "optimize-autoloader": true
     },
     "repositories": [
