@@ -24,6 +24,8 @@ return [
     'Are you sure you want to flush this cache?' => 'Вы уверены, что хотите сбросить этот кеш?',
     'Article categories' => 'Категории статей',
     'Articles' => 'Статьи',
+    'Assets' => 'Ресурсы',
+    'Assets cleared.' => 'Ресурсы очищены.',
     'Backend sidebar collapsed' => 'Скрыть боковую панель',
     'Backend sidebar mini' => 'Минимизировать боковую панель',
     'Backend theme' => 'Тема панели управления',

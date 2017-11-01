@@ -6,22 +6,56 @@ use Yii;
 use yii\caching\Cache;
 use yii\caching\TagDependency;
 use yii\data\ArrayDataProvider;
+use yii\helpers\FileHelper;
 use yii\web\Controller;
 use yii\web\HttpException;
 
 /**
- * Class CacheController.
+ * Class SystemController.
  */
-class CacheController extends Controller
+class SystemController extends Controller
 {
     /**
-     * @return string
+     * @inheritdoc
      */
-    public function actionIndex()
+    public function actionAssets()
+    {
+        return $this->render('assets');
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function actionCache()
     {
         $dataProvider = new ArrayDataProvider(['allModels' => $this->findCaches()]);
 
-        return $this->render('index', ['dataProvider' => $dataProvider]);
+        return $this->render('cache', ['dataProvider' => $dataProvider]);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function actionClearAssets($type = 'backend')
+    {
+        if ($type === 'backend') {
+            $assets = Yii::getAlias('@backend/web/assets');
+        }
+        if ($type === 'frontend') {
+            $assets = Yii::getAlias('@frontend/web/assets');
+        }
+        foreach (glob($assets . DIRECTORY_SEPARATOR . '*') as $asset) {
+            if (is_link($asset)) {
+                unlink($asset);
+            } elseif (is_dir($asset)) {
+                FileHelper::removeDirectory($asset);
+            } else {
+                unlink($asset);
+            }
+        }
+        Yii::$app->session->setFlash('success', Yii::t('backend', 'Assets cleared.'));
+
+        return $this->redirect(['assets']);
     }
 
     /**
@@ -35,7 +69,7 @@ class CacheController extends Controller
             Yii::$app->session->setFlash('success', Yii::t('backend', 'Cache has been successfully flushed.'));
         }
 
-        return $this->redirect(['index']);
+        return $this->redirect(['cache']);
     }
 
     /**

@@ -11,7 +11,7 @@ use yii\helpers\Url;
 $this->title = Yii::t('backend', 'Cache');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="article-index">
+<div class="cache-index">
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
