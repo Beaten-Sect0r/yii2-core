@@ -84,7 +84,7 @@ class SystemController extends Controller
             Yii::$app->session->setFlash('success', Yii::t('backend', 'Cache entry has been successfully deleted.'));
         }
 
-        return $this->redirect(['index']);
+        return $this->redirect(['cache']);
     }
 
     /**
@@ -98,7 +98,7 @@ class SystemController extends Controller
         TagDependency::invalidate($this->getCache($id), $tag);
         Yii::$app->session->setFlash('success', Yii::t('backend', 'TagDependency was invalidated.'));
 
-        return $this->redirect(['index']);
+        return $this->redirect(['cache']);
     }
 
     /**

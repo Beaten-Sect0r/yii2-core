@@ -74,6 +74,18 @@ $config = [
                 ],
             ],
         ],
+        'phpsysinfo' => [
+            'class' => 'bs\phpSysInfo\Module',
+            'as access' => [
+                'class' => 'common\behaviors\GlobalAccessBehavior',
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['administrator'],
+                    ],
+                ],
+            ],
+        ],
         'rbac' => [
             'class' => 'developeruz\db_rbac\Yii2DbRbac',
             'as access' => [

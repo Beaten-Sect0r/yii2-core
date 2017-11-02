@@ -86,6 +86,7 @@ return [
     'Static pages' => 'Статические страницы',
     'Status' => 'Статус',
     'System' => 'Система',
+    'System information' => 'Системная информация',
     'Tag' => 'Тег',
     'TagDependency was invalidated.' => 'TagDependency был инвалидирован.',
     'Tags' => 'Теги',

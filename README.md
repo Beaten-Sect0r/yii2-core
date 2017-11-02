@@ -33,6 +33,7 @@ It covers typical use cases for a new project and will help you not to waste you
 - Cache web controller
 - [DB manager](https://github.com/Beaten-Sect0r/yii2-db-manager)
 - [Flatpickr widget](https://github.com/Beaten-Sect0r/yii2-flatpickr)
+- [phpSysInfo](https://github.com/Beaten-Sect0r/yii2-phpsysinfo)
 - [RBAC](https://github.com/developeruz/yii2-db-rbac) with predefined `guest`, `user`, `manager` and `administrator` roles
 - [dotenv support](https://github.com/vlucas/phpdotenv)
 - [Sitemap and sitemap index builder](https://github.com/samdark/sitemap)

@@ -20,6 +20,7 @@
         "vlucas/phpdotenv": "*",
         "beaten-sect0r/yii2-db-manager": "*",
         "beaten-sect0r/yii2-flatpickr": "*",
+        "beaten-sect0r/yii2-phpsysinfo": "*",
         "samdark/sitemap": "*",
         "developeruz/yii2-db-rbac": "*",
         "vova07/yii2-fileapi-widget": "*",
