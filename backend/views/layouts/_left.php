@@ -71,8 +71,8 @@ use backend\widgets\Menu;
                             'visible' => Yii::$app->user->can('administrator'),
                         ],
                         ['label' => Yii::t('backend', 'Key storage'), 'url' => ['/key-storage/index'], 'icon' => '<i class="fa fa-angle-double-right"></i>'],
-                        ['label' => Yii::t('backend', 'Cache'), 'url' => ['/system/cache'], 'icon' => '<i class="fa fa-angle-double-right"></i>'],
-                        ['label' => Yii::t('backend', 'Assets'), 'url' => ['/system/assets'], 'icon' => '<i class="fa fa-angle-double-right"></i>'],
+                        ['label' => Yii::t('backend', 'Cache'), 'url' => ['/service/cache'], 'icon' => '<i class="fa fa-angle-double-right"></i>'],
+                        ['label' => Yii::t('backend', 'Assets'), 'url' => ['/service/clear-assets'], 'icon' => '<i class="fa fa-angle-double-right"></i>'],
                         [
                             'label' => Yii::t('backend', 'Logs'),
                             'url' => ['/log/index'],

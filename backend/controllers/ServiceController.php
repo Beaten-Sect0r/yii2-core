@@ -11,18 +11,10 @@ use yii\web\Controller;
 use yii\web\HttpException;
 
 /**
- * Class SystemController.
+ * Class ServiceController.
  */
-class SystemController extends Controller
+class ServiceController extends Controller
 {
-    /**
-     * @inheritdoc
-     */
-    public function actionAssets()
-    {
-        return $this->render('assets');
-    }
-
     /**
      * @inheritdoc
      */
@@ -36,26 +28,23 @@ class SystemController extends Controller
     /**
      * @inheritdoc
      */
-    public function actionClearAssets($type = 'backend')
+    public function actionClearAssets()
     {
-        if ($type === 'backend') {
-            $assets = Yii::getAlias('@backend/web/assets');
-        }
-        if ($type === 'frontend') {
-            $assets = Yii::getAlias('@frontend/web/assets');
-        }
-        foreach (glob($assets . DIRECTORY_SEPARATOR . '*') as $asset) {
-            if (is_link($asset)) {
-                unlink($asset);
-            } elseif (is_dir($asset)) {
-                FileHelper::removeDirectory($asset);
-            } else {
-                unlink($asset);
+        $dirs = [
+            Yii::getAlias('@backend/web/assets'),
+            Yii::getAlias('@frontend/web/assets'),
+        ];
+        foreach($dirs as $dir)
+        {
+            $files = glob($dir . '/*');
+            foreach($files as $file)
+            {
+                FileHelper::removeDirectory($file);
             }
         }
         Yii::$app->session->setFlash('success', Yii::t('backend', 'Assets cleared.'));
 
-        return $this->redirect(['assets']);
+        return $this->goBack();
     }
 
     /**
