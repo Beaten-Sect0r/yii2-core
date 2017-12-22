@@ -2,10 +2,10 @@ require 'yaml'
 require 'fileutils'
 
 domains = {
-  frontend: 'yii2-core.dev',
-  backend: 'backend.yii2-core.dev',
-  storage: 'storage.yii2-core.dev',
-  pma: 'pma.yii2-core.dev'
+  frontend: 'yii2-core.loc',
+  backend: 'backend.yii2-core.loc',
+  storage: 'storage.yii2-core.loc',
+  pma: 'pma.yii2-core.loc'
 }
 
 config = {
