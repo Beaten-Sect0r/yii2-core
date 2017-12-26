@@ -50,7 +50,10 @@
     "config": {
         "process-timeout": 1800,
         "preferred-install": "dist",
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "fxp-asset": {
+            "enabled": false
+        }
     },
     "repositories": [
         {
