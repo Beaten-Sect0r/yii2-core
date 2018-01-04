@@ -37,7 +37,7 @@ fi
 
 info "Init project"
 if [ ! -f .env ]; then
-    cp .env.example .env
+    cp .env.dist .env
 fi
 php yii app/setup --interactive=0
 
