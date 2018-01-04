@@ -25,7 +25,7 @@ It covers typical use cases for a new project and will help you not to waste you
 - Translations: English, Russian
 - Sign in, sign up, profile, email activation etc
 - User management
-- Content management components: articles, categories, tags, comments, static pages, editable menu
+- Content management components: articles, categories, tags, static pages, editable menu
 - Maintenance mode component
 - Key storage
 - Useful behaviors (GlobalAccessBehavior, LastActionBehavior)
