@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m160101_000005_menu extends Migration
+class m160101_000005_navbar_menu extends Migration
 {
     public function up()
     {
@@ -11,7 +11,7 @@ class m160101_000005_menu extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%menu}}', [
+        $this->createTable('{{%navbar_menu}}', [
             'id' => $this->primaryKey(),
             'url' => $this->string(255)->notNull(),
             'label' => $this->string(255)->notNull(),
@@ -20,11 +20,11 @@ class m160101_000005_menu extends Migration
             'sort_index' => $this->integer(),
         ], $tableOptions);
 
-        $this->addForeignKey('parent', '{{%menu}}', 'parent_id', '{{%menu}}', 'id', 'cascade', 'cascade');
+        $this->addForeignKey('parent', '{{%navbar_menu}}', 'parent_id', '{{%navbar_menu}}', 'id', 'cascade', 'cascade');
     }
 
     public function down()
     {
-        $this->dropTable('{{%menu}}');
+        $this->dropTable('{{%navbar_menu}}');
     }
 }

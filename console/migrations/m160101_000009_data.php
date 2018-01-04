@@ -25,7 +25,7 @@ class m160101_000009_data extends Migration
             'user_id' => 1,
         ]);
 
-        $this->insert('{{%menu}}', [
+        $this->insert('{{%navbar_menu}}', [
             'url' => 'page/about',
             'label' => 'About',
             'status' => Menu::STATUS_ACTIVE,
@@ -91,7 +91,7 @@ class m160101_000009_data extends Migration
             'slug' => 'about',
         ]);
 
-        $this->delete('{{%menu}}', [
+        $this->delete('{{%navbar_menu}}', [
             'url' => 'page/about'
         ]);
 

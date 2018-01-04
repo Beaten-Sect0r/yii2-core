@@ -8,7 +8,7 @@ use yii\helpers\ArrayHelper;
 use common\models\query\MenuQuery;
 
 /**
- * This is the model class for table "{{%menu}}".
+ * This is the model class for table "{{%navbar_menu}}".
  *
  * @property integer $id
  * @property string $url
@@ -30,7 +30,7 @@ class Menu extends ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%menu}}';
+        return '{{%navbar_menu}}';
     }
 
     /**

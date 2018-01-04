@@ -27,7 +27,7 @@ class MenuQuery extends ActiveQuery
      */
     public function noParents()
     {
-        $this->andWhere('{{%menu}}.parent_id IS NULL');
+        $this->andWhere('{{%navbar_menu}}.parent_id IS NULL');
 
         return $this;
     }
