@@ -44,6 +44,7 @@ It covers typical use cases for a new project and will help you not to waste you
 - [ElFinder widget](https://github.com/MihailDev/yii2-elfinder)
 - [Notification wrapper](https://github.com/loveorigami/yii2-notification-wrapper)
 - [Open Sans fonts](https://www.google.com/fonts/specimen/Open+Sans)
+- [Awesome font](http://fontawesome.io)
 - [JavaScript syntax highlighter](https://github.com/isagalaev/highlight.js)
 - [Vagrant support](https://www.vagrantup.com)
 
