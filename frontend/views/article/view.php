@@ -37,20 +37,22 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php endif ?>
 
                 <hr/>
-                <!--noindex-->
-                    <div id="disqus_thread"></div>
-                    <script>
-                        var disqus_config = function () {
-                            this.page.identifier = <?= Html::encode($model->slug) ?>;
-                        };
-                        (function() {
-                            var d = document, s = d.createElement('script');
-                            s.src = 'https://<?= env('SHORT_NAME') ?>.disqus.com/embed.js';
-                            s.setAttribute('data-timestamp', +new Date());
-                            (d.head || d.body).appendChild(s);
-                        })();
-                    </script>
-                <!--/noindex-->
+                <?php if (!empty(env('SHORT_NAME'))) : ?>
+                    <!--noindex-->
+                        <div id="disqus_thread"></div>
+                        <script>
+                            var disqus_config = function () {
+                                this.page.identifier = <?= Html::encode($model->slug) ?>;
+                            };
+                            (function() {
+                                var d = document, s = d.createElement('script');
+                                s.src = 'https://<?= env('SHORT_NAME') ?>.disqus.com/embed.js';
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                            })();
+                        </script>
+                    <!--/noindex-->
+                <?php endif ?>
             </div>
 
             <div class="col-md-3">
