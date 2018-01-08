@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m160101_000005_navbar_menu extends Migration
+class m160101_000003_navbar_menu extends Migration
 {
     public function up()
     {

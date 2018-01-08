@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m160101_000008_tag extends Migration
+class m160101_000006_tag extends Migration
 {
     public function safeUp()
     {

@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m160101_000004_key_storage_item extends Migration
+class m160101_000002_key_storage_item extends Migration
 {
     public function up()
     {

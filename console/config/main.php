@@ -10,6 +10,16 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'console\controllers',
     'bootstrap' => ['gii'],
+    'controllerMap' => [
+        'migrate' => [
+            'class' => yii\console\controllers\MigrateController::class,
+            'migrationPath' => [
+                '@console/migrations',
+                '@yii/rbac/migrations',
+                '@yii/log/migrations',
+            ],
+        ],
+    ],
     'modules' => [
         'gii' => 'yii\gii\Module',
         'db-manager' => [

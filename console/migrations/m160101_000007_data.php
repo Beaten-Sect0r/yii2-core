@@ -5,7 +5,7 @@ use common\models\Menu;
 use common\models\Page;
 use common\models\User;
 
-class m160101_000009_data extends Migration
+class m160101_000007_data extends Migration
 {
     public function safeUp()
     {
