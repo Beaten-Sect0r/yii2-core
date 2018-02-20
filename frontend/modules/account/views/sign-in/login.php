@@ -21,7 +21,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="form-group">
             <div class="btn-group">
-                <?= Html::a(Yii::t('frontend', 'Signup'), ['sign-in/signup'], ['class' => 'btn btn-success']) ?>
+                <?php if (Yii::$app->keyStorage->get('frontend.registration')) {
+                    echo Html::a(Yii::t('frontend', 'Signup'), ['sign-in/signup'], ['class' => 'btn btn-success']);
+                }?>
 
                 <?= Html::a(Yii::t('frontend', 'Lost password'), ['sign-in/request-password-reset'], ['class' => 'btn btn-danger']) ?>
             </div>
