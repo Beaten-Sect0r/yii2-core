@@ -32,7 +32,7 @@
         "bower-asset/admin-lte": "*",
         "bower-asset/html5shiv": "*",
         "bower-asset/timecircles": "*",
-        "bower-asset/font-awesome": "*",
+        "bower-asset/font-awesome": "~4.7.0",
         "bower-asset/open-sans-fontface": "*",
         "bower-asset/highlightjs": "*",
         "bower-asset/jquery-slimscroll": "*"
