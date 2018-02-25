@@ -120,8 +120,6 @@ class SignInController extends Controller
 
             return $this->render('signup', ['model' => $model]);
         } else {
-            Yii::$app->session->setFlash('info', Yii::t('frontend', 'Registration is disabled.'));
-
             return $this->goHome();
         }
     }
