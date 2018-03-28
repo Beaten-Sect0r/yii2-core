@@ -42,7 +42,7 @@ class Menu extends ActiveRecord
             [['url', 'label'], 'required'],
             [['parent_id', 'sort_index'], 'integer'],
             [['url', 'label'], 'string', 'max' => 255],
-            ['parent_id', 'exist', 'skipOnError' => true, 'targetClass' => self::className(), 'targetAttribute' => ['parent_id' => 'id']],
+            ['parent_id', 'exist', 'skipOnError' => true, 'targetClass' => self::class, 'targetAttribute' => ['parent_id' => 'id']],
             ['status', 'default', 'value' => self::STATUS_DRAFT],
         ];
     }
@@ -66,7 +66,7 @@ class Menu extends ActiveRecord
      */
     public function getParent()
     {
-        return $this->hasOne(self::className(), ['id' => 'parent_id']);
+        return $this->hasOne(self::class, ['id' => 'parent_id']);
     }
 
     /**
@@ -74,7 +74,7 @@ class Menu extends ActiveRecord
      */
     public function getChilds()
     {
-        return $this->hasMany(self::className(), ['parent_id' => 'id']);
+        return $this->hasMany(self::class, ['parent_id' => 'id']);
     }
 
     /**

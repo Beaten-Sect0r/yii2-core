@@ -21,7 +21,7 @@ class SiteController extends Controller
     {
         return [
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class' => VerbFilter::class,
                 'actions' => [
                     'logout' => ['post'],
                 ],
@@ -39,7 +39,7 @@ class SiteController extends Controller
                 'class' => 'yii\web\ErrorAction',
             ],
             'fileapi-upload' => [
-                'class' => FileAPIUpload::className(),
+                'class' => FileAPIUpload::class,
                 'path' => '@storage/tmp',
             ],
         ];

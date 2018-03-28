@@ -19,7 +19,7 @@ class ArticleQuery extends ActiveQuery
     public function behaviors()
     {
         return [
-            TaggableQueryBehavior::className(),
+            TaggableQueryBehavior::class,
         ];
     }
 

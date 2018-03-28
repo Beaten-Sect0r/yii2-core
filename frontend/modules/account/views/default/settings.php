@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $form->field($model, 'lastname')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'birthday')->widget(FlatpickrWidget::className(), [
+    <?= $form->field($model, 'birthday')->widget(FlatpickrWidget::class, [
         'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
         'groupBtnShow' => true,
         'options' => [
@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
-    <?= $form->field($model, 'avatar_path')->widget(FileApi::className(), [
+    <?= $form->field($model, 'avatar_path')->widget(FileApi::class, [
         'settings' => [
             'url' => ['/site/fileapi-upload'],
         ],

@@ -43,9 +43,9 @@ class ArticleCategory extends ActiveRecord
     public function behaviors()
     {
         return [
-            TimestampBehavior::className(),
+            TimestampBehavior::class,
             [
-                'class' => SluggableBehavior::className(),
+                'class' => SluggableBehavior::class,
                 'attribute' => 'title',
                 'ensureUnique' => true,
                 'immutable' => true,
@@ -63,7 +63,7 @@ class ArticleCategory extends ActiveRecord
             ['comment', 'string'],
             [['parent_id', 'status', 'created_at', 'updated_at'], 'integer'],
             [['title', 'slug'], 'string', 'max' => 255],
-            ['parent_id', 'exist', 'skipOnError' => true, 'targetClass' => self::className(), 'targetAttribute' => ['parent_id' => 'id']],
+            ['parent_id', 'exist', 'skipOnError' => true, 'targetClass' => self::class, 'targetAttribute' => ['parent_id' => 'id']],
             ['status', 'default', 'value' => self::STATUS_DRAFT],
         ];
     }
@@ -89,7 +89,7 @@ class ArticleCategory extends ActiveRecord
      */
     public function getArticles()
     {
-        return $this->hasMany(Article::className(), ['category_id' => 'id']);
+        return $this->hasMany(Article::class, ['category_id' => 'id']);
     }
 
     /**
@@ -97,7 +97,7 @@ class ArticleCategory extends ActiveRecord
      */
     public function getParent()
     {
-        return $this->hasOne(self::className(), ['id' => 'parent_id']);
+        return $this->hasOne(self::class, ['id' => 'parent_id']);
     }
 
     /**
@@ -105,7 +105,7 @@ class ArticleCategory extends ActiveRecord
      */
     public function getChilds()
     {
-        return $this->hasMany(self::className(), ['parent_id' => 'id']);
+        return $this->hasMany(self::class, ['parent_id' => 'id']);
     }
 
     /**

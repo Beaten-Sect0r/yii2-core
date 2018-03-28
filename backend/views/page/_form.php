@@ -23,7 +23,7 @@ use dosamigos\tinymce\TinyMce;
 
     <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'body')->widget(TinyMce::className(), [
+    <?= $form->field($model, 'body')->widget(TinyMce::class, [
         'language' => strtolower(substr(Yii::$app->language, 0, 2)),
         'clientOptions' => [
             'height'=> 350,

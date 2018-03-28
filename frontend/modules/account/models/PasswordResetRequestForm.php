@@ -23,7 +23,7 @@ class PasswordResetRequestForm extends Model
             ['email', 'trim'],
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'exist', 'targetClass' => User::className(), 'filter' => ['status' => User::STATUS_ACTIVE]],
+            ['email', 'exist', 'targetClass' => User::class, 'filter' => ['status' => User::STATUS_ACTIVE]],
 
             // verifyCode needs to be entered correctly
             ['verifyCode', 'captcha'],

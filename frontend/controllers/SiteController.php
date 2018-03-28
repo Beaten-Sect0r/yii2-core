@@ -25,7 +25,7 @@ class SiteController extends Controller
                 'class' => 'yii\captcha\CaptchaAction',
             ],
             'fileapi-upload' => [
-                'class' => FileAPIUpload::className(),
+                'class' => FileAPIUpload::class,
                 'path' => '@storage/tmp',
             ],
         ];

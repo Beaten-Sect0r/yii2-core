@@ -26,13 +26,13 @@ class SignupForm extends Model
             ['username', 'trim'],
             ['username', 'required'],
             ['username', 'match', 'pattern' => '#^[\w_-]+$#i'],
-            ['username', 'unique', 'targetClass' => User::className()],
+            ['username', 'unique', 'targetClass' => User::class],
             ['username', 'string', 'min' => 2, 'max' => 32],
 
             ['email', 'trim'],
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass' => User::className()],
+            ['email', 'unique', 'targetClass' => User::class],
             ['email', 'string', 'max' => 255],
 
             ['password', 'required'],

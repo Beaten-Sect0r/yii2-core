@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= FormWidget::widget([
         'model' => $model,
-        'formClass' => ActiveForm::className(),
+        'formClass' => ActiveForm::class,
         'submitText' => Yii::t('backend', 'Save'),
         'submitOptions' => ['class' => 'btn btn-primary'],
     ]) ?>

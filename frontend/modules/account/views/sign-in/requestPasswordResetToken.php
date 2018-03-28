@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?= $form->field($model, 'email')->textInput() ?>
 
-        <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+        <?= $form->field($model, 'verifyCode')->widget(Captcha::class, [
             'captchaAction' => '/site/captcha',
             'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
         ]) ?>

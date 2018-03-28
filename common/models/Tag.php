@@ -32,7 +32,7 @@ class Tag extends ActiveRecord
     {
         return [
             [
-                'class' => SluggableBehavior::className(),
+                'class' => SluggableBehavior::class,
                 'attribute' => 'name',
                 'ensureUnique' => true,
                 'immutable' => true,

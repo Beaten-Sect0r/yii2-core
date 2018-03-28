@@ -26,7 +26,7 @@ use dosamigos\tinymce\TinyMce;
 
     <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'preview')->widget(TinyMce::className(), [
+    <?= $form->field($model, 'preview')->widget(TinyMce::class, [
         'language' => strtolower(substr(Yii::$app->language, 0, 2)),
         'clientOptions' => [
             'height'=> 150,
@@ -40,7 +40,7 @@ use dosamigos\tinymce\TinyMce;
         ],
     ]) ?>
 
-    <?= $form->field($model, 'body')->widget(TinyMce::className(), [
+    <?= $form->field($model, 'body')->widget(TinyMce::class, [
         'language' => strtolower(substr(Yii::$app->language, 0, 2)),
         'clientOptions' => [
             'height'=> 350,
@@ -54,7 +54,7 @@ use dosamigos\tinymce\TinyMce;
         ],
     ]) ?>
 
-    <?= $form->field($model, 'tagValues')->widget(SelectizeTextInput::className(), [
+    <?= $form->field($model, 'tagValues')->widget(SelectizeTextInput::class, [
         'loadUrl' => ['tag/list'],
         'options' => ['class' => 'form-control'],
         'clientOptions' => [
@@ -75,7 +75,7 @@ use dosamigos\tinymce\TinyMce;
         ), ['prompt' => '']
     ) ?>
 
-    <?= $form->field($model, 'published_at')->widget(FlatpickrWidget::className(), [
+    <?= $form->field($model, 'published_at')->widget(FlatpickrWidget::class, [
         'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
         'plugins' => [
              'confirmDate' => [

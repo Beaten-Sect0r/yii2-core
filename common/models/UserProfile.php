@@ -38,7 +38,7 @@ class UserProfile extends ActiveRecord
     {
         return [
             'uploadBehavior' => [
-                'class' => UploadBehavior::className(),
+                'class' => UploadBehavior::class,
                 'attributes' => [
                     'avatar_path' => [
                         'path' => '@storage/avatars',
@@ -64,7 +64,7 @@ class UserProfile extends ActiveRecord
             [['firstname', 'lastname', 'avatar_path', 'website'], 'string', 'max' => 255],
             ['firstname', 'match', 'pattern' => '/^[a-zа-яё]+$/iu'],
             ['lastname', 'match', 'pattern' => '/^[a-zа-яё]+(-[a-zа-яё]+)?$/iu'],
-            ['user_id', 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
+            ['user_id', 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id']],
             [['firstname', 'lastname', 'birthday', 'gender', 'website', 'other'], 'default', 'value' => null],
         ];
     }

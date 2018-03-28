@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 
     <?= $form->field($profile, 'lastname')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($profile, 'birthday')->widget(FlatpickrWidget::className(), [
+    <?= $form->field($profile, 'birthday')->widget(FlatpickrWidget::class, [
         'locale' => strtolower(substr(Yii::$app->language, 0, 2)),
         'groupBtnShow' => true,
         'options' => [
@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
         ],
     ]) ?>
 
-    <?= $form->field($profile, 'avatar_path')->widget(FileApi::className(), [
+    <?= $form->field($profile, 'avatar_path')->widget(FileApi::class, [
         'settings' => [
             'url' => ['/site/fileapi-upload'],
         ],

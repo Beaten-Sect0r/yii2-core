@@ -55,19 +55,19 @@ class Article extends ActiveRecord
     public function behaviors()
     {
         return [
-            TimestampBehavior::className(),
+            TimestampBehavior::class,
             [
-                'class' => BlameableBehavior::className(),
+                'class' => BlameableBehavior::class,
                 'createdByAttribute' => 'author_id',
                 'updatedByAttribute' => 'updater_id',
             ],
             [
-                'class' => SluggableBehavior::className(),
+                'class' => SluggableBehavior::class,
                 'attribute' => 'title',
                 'ensureUnique' => true,
                 'immutable' => true,
             ],
-            TaggableBehavior::className(),
+            TaggableBehavior::class,
         ];
     }
 
@@ -88,9 +88,9 @@ class Article extends ActiveRecord
             [['status', 'category_id', 'author_id', 'updater_id', 'created_at', 'updated_at'], 'integer'],
             [['title', 'slug', 'description', 'keywords'], 'string', 'max' => 255],
             ['status', 'default', 'value' => self::STATUS_DRAFT],
-            ['author_id', 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['author_id' => 'id']],
-            ['category_id', 'exist', 'skipOnError' => true, 'targetClass' => ArticleCategory::className(), 'targetAttribute' => ['category_id' => 'id']],
-            ['updater_id', 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['updater_id' => 'id']],
+            ['author_id', 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['author_id' => 'id']],
+            ['category_id', 'exist', 'skipOnError' => true, 'targetClass' => ArticleCategory::class, 'targetAttribute' => ['category_id' => 'id']],
+            ['updater_id', 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['updater_id' => 'id']],
             ['tagValues', 'safe'],
         ];
     }
@@ -133,7 +133,7 @@ class Article extends ActiveRecord
      */
     public function getAuthor()
     {
-        return $this->hasOne(User::className(), ['id' => 'author_id']);
+        return $this->hasOne(User::class, ['id' => 'author_id']);
     }
 
     /**
@@ -141,7 +141,7 @@ class Article extends ActiveRecord
      */
     public function getCategory()
     {
-        return $this->hasOne(ArticleCategory::className(), ['id' => 'category_id']);
+        return $this->hasOne(ArticleCategory::class, ['id' => 'category_id']);
     }
 
     /**
@@ -149,7 +149,7 @@ class Article extends ActiveRecord
      */
     public function getUpdater()
     {
-        return $this->hasOne(User::className(), ['id' => 'updater_id']);
+        return $this->hasOne(User::class, ['id' => 'updater_id']);
     }
 
     /**
@@ -157,7 +157,7 @@ class Article extends ActiveRecord
      */
     public function getTags()
     {
-        return $this->hasMany(Tag::className(), ['id' => 'tag_id'])->viaTable('{{%article_tag}}', ['article_id' => 'id']);
+        return $this->hasMany(Tag::class, ['id' => 'tag_id'])->viaTable('{{%article_tag}}', ['article_id' => 'id']);
     }
 
     /**
