@@ -36,7 +36,7 @@ fi
 php yii app/setup --interactive=0
 
 info "Create bash-alias 'app' for ubuntu user"
-echo 'alias app="cd /app"' | tee /home/ubuntu/.bash_aliases
+echo 'alias app="cd /app"' | sudo tee /home/ubuntu/.bash_aliases
 
 info "Enabling colorized prompt for guest console"
-sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/' /home/ubuntu/.bashrc
+sudo sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/' /home/ubuntu/.bashrc
