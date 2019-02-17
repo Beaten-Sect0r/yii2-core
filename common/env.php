@@ -10,7 +10,7 @@ require_once __DIR__ . '/shortcuts.php';
 /**
  * Load application environment from .env file
  */
-$dotenv = new Dotenv(dirname(__DIR__));
+$dotenv = Dotenv::create(dirname(__DIR__));
 $dotenv->load();
 
 /**
